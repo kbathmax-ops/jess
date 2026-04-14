@@ -64,7 +64,7 @@ export default function Footer() {
               {[
                 {
                   label: "IG",
-                  href: "https://instagram.com/jess",
+                  href: "https://instagram.com/tattoosbyjesss",
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                       <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5" />

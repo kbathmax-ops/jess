@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import ScrollReveal from "./ScrollReveal";
 
-const INSTAGRAM_HANDLE = "jess"; // ← update this
+const INSTAGRAM_HANDLE = "tattoosbyjesss";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id"; // ← update this
 
 export default function Contact() {
