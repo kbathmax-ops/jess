@@ -4,7 +4,6 @@ import {
   Bebas_Neue,
   DM_Sans,
   Space_Mono,
-  Pinyon_Script,
 } from "next/font/google";
 import "./globals.css";
 
@@ -37,19 +36,12 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
-const pinyonScript = Pinyon_Script({
-  variable: "--font-pinyon",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Jess — Creative Portfolio",
-  description: "Photography, social media & creative direction by Jess.",
+  title: "Tattoos by Jess",
+  description: "Fine line tattoo artist based in South Florida. Custom pieces, flash designs, and bookings.",
   openGraph: {
-    title: "Jess — Creative Portfolio",
-    description: "Photography, social media & creative direction by Jess.",
+    title: "Tattoos by Jess",
+    description: "Fine line tattoo artist based in South Florida. Custom pieces, flash designs, and bookings.",
     type: "website",
   },
 };
@@ -62,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${bebas.variable} ${dmSans.variable} ${spaceMono.variable} ${pinyonScript.variable}`}
+      className={`${cormorant.variable} ${bebas.variable} ${dmSans.variable} ${spaceMono.variable}`}
     >
       <body className="min-h-screen antialiased">{children}</body>
     </html>

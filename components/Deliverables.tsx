@@ -3,83 +3,81 @@
 import ScrollReveal from "./ScrollReveal";
 
 const services = [
-  { num: "01", title: "Photography", desc: "Portraits, editorial, events, product — curated for your vision." },
-  { num: "02", title: "Social Media Management", desc: "Content strategy, scheduling, captions, and growth for your brand." },
-  { num: "03", title: "Creative Direction", desc: "Visual concepts, mood boards, set design, and art direction." },
-  { num: "04", title: "Content Creation", desc: "Reels, TikToks, photo dumps, campaigns — built for engagement." },
-  { num: "05", title: "Brand Identity", desc: "Visual language development — color, typography, mood, aesthetic." },
-  { num: "06", title: "Event Coverage", desc: "Full-day coverage with same-day delivery of curated selections." },
+  { num: "01", title: "Fine Line Work", desc: "Delicate, precise linework — from micro pieces to full panels. Heals clean, lasts sharp." },
+  { num: "02", title: "Custom Pieces", desc: "Fully original designs built around your vision and reference. Every line drawn from scratch." },
+  { num: "03", title: "Flash Designs", desc: "Pre-drawn sets available at fixed rates. New flash released monthly. First come, first served." },
+  { num: "04", title: "Cover-Ups", desc: "Transform existing tattoos into something you love. Consultation required before booking." },
+  { num: "05", title: "Touch-Up Service", desc: "All tattoos receive a complimentary touch-up session within 3 months of the original appointment." },
+  { num: "06", title: "Flash Day Events", desc: "Monthly community sessions at the studio — smaller designs, discounted rates, walk-in friendly." },
 ];
 
 export default function Deliverables() {
   return (
     <section
       id="deliverables"
-      className="relative py-28 md:py-36 px-8 md:px-16 lg:px-24"
-      style={{ background: "#F5EDD8" }}
+      className="relative py-20 md:py-28 px-5 md:px-10 lg:px-14"
+      style={{ background: "#F2EBD9" }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="flex items-start justify-between mb-20 flex-wrap gap-4">
+        <div className="flex items-end justify-between mb-14 md:mb-18 flex-wrap gap-4">
           <div>
             <ScrollReveal>
               <p
-                className="text-rust text-xs tracking-[0.4em] uppercase mb-4"
-                style={{ fontFamily: "var(--font-space-mono)" }}
+                className="mb-3"
+                style={{
+                  fontFamily: "var(--font-space-mono)",
+                  fontSize: "9px",
+                  letterSpacing: "0.4em",
+                  textTransform: "uppercase",
+                  color: "rgba(26,20,16,0.35)",
+                }}
               >
                 (04) — Services
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={0.1}>
+            <ScrollReveal delay={0.08}>
               <h2
                 className="leading-none"
                 style={{
                   fontFamily: "var(--font-bebas)",
-                  fontSize: "clamp(56px, 8vw, 110px)",
-                  letterSpacing: "0.02em",
+                  fontSize: "clamp(56px, 11vw, 130px)",
+                  letterSpacing: "0.01em",
                   color: "#1A1410",
+                  lineHeight: 0.9,
                 }}
               >
-                Deliverables
+                What I Do
               </h2>
             </ScrollReveal>
           </div>
-          <ScrollReveal direction="right" delay={0.2}>
-            <span
-              className="self-end pb-4"
-              style={{
-                fontFamily: "var(--font-space-mono)",
-                fontSize: "48px",
-                lineHeight: 1,
-                color: "#C0392B",
-              }}
-            >
-              (4)
-            </span>
-          </ScrollReveal>
         </div>
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-          {/* Service list */}
-          <div className="flex flex-col gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+          {/* Service list — takes 3 cols */}
+          <div className="lg:col-span-3 flex flex-col">
             {services.map((s, i) => (
-              <ScrollReveal key={s.num} delay={i * 0.07}>
+              <ScrollReveal key={s.num} delay={i * 0.06}>
                 <div
-                  className="deliverable-item py-7 border-b"
-                  style={{ borderColor: "rgba(26,20,16,0.1)" }}
+                  className="deliverable-item py-6 border-b"
+                  style={{ borderColor: "rgba(26,20,16,0.08)" }}
                 >
-                  <div className="flex items-baseline gap-4 mb-1">
+                  <div className="flex items-baseline gap-4 mb-1.5">
                     <span
-                      className="text-rust"
-                      style={{ fontFamily: "var(--font-space-mono)", fontSize: "11px" }}
+                      style={{
+                        fontFamily: "var(--font-space-mono)",
+                        fontSize: "9px",
+                        letterSpacing: "0.2em",
+                        color: "#A63324",
+                      }}
                     >
                       {s.num}
                     </span>
                     <h3
                       style={{
                         fontFamily: "var(--font-cormorant)",
-                        fontSize: "clamp(22px, 3vw, 32px)",
+                        fontSize: "clamp(20px, 2.8vw, 30px)",
                         fontStyle: "italic",
                         fontWeight: 600,
                         color: "#1A1410",
@@ -89,12 +87,13 @@ export default function Deliverables() {
                     </h3>
                   </div>
                   <p
-                    className="pl-10"
                     style={{
                       fontFamily: "var(--font-dm-sans)",
-                      fontSize: "14px",
-                      color: "rgba(26,20,16,0.55)",
+                      fontSize: "13px",
+                      color: "rgba(26,20,16,0.52)",
                       lineHeight: "1.75",
+                      fontWeight: 300,
+                      paddingLeft: "clamp(24px, 3vw, 40px)",
                     }}
                   >
                     {s.desc}
@@ -104,73 +103,81 @@ export default function Deliverables() {
             ))}
           </div>
 
-          {/* Visual accent panel */}
-          <ScrollReveal direction="right" delay={0.2}>
-            <div className="sticky top-32">
-              {/* Abstract texture block */}
+          {/* Pricing panel — takes 2 cols */}
+          <ScrollReveal direction="right" delay={0.18} className="lg:col-span-2">
+            <div className="sticky top-28">
+              {/* Rate block — editorial, no gradient card */}
               <div
-                className="w-full aspect-square relative overflow-hidden"
-                style={{
-                  background: "linear-gradient(135deg, #C0392B 0%, #8B1A1A 35%, #2C1A0E 65%, #C8A96E 100%)",
-                }}
+                className="p-8 md:p-10"
+                style={{ background: "#1A1410" }}
               >
-                {/* Cross-hatch overlay */}
-                <div
-                  className="absolute inset-0"
+                <p
+                  className="mb-2"
                   style={{
-                    backgroundImage: `
-                      repeating-linear-gradient(0deg, rgba(245,237,216,0.05) 0px, rgba(245,237,216,0.05) 1px, transparent 1px, transparent 40px),
-                      repeating-linear-gradient(90deg, rgba(245,237,216,0.05) 0px, rgba(245,237,216,0.05) 1px, transparent 1px, transparent 40px)
-                    `,
+                    fontFamily: "var(--font-space-mono)",
+                    fontSize: "9px",
+                    letterSpacing: "0.35em",
+                    textTransform: "uppercase",
+                    color: "rgba(242,235,217,0.35)",
                   }}
+                >
+                  Starting at
+                </p>
+                <p
+                  className="leading-none mb-5"
+                  style={{
+                    fontFamily: "var(--font-bebas)",
+                    fontSize: "clamp(72px, 10vw, 100px)",
+                    color: "#F2EBD9",
+                  }}
+                >
+                  $150
+                </p>
+                <div
+                  className="mb-5"
+                  style={{ height: "1px", background: "rgba(242,235,217,0.1)" }}
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-10 text-center">
-                  <p
-                    className="text-cream text-xs tracking-[0.4em] uppercase"
-                    style={{ fontFamily: "var(--font-space-mono)" }}
-                  >
-                    Starting at
-                  </p>
-                  <p
-                    className="text-cream leading-none"
-                    style={{ fontFamily: "var(--font-bebas)", fontSize: "80px" }}
-                  >
-                    $250
-                  </p>
-                  <p
-                    className="text-cream leading-relaxed max-w-[180px]"
-                    style={{
-                      fontFamily: "var(--font-cormorant)",
-                      fontSize: "18px",
-                      fontStyle: "italic",
-                      color: "rgba(245,237,216,0.8)",
-                    }}
-                  >
-                    Custom packages available for every budget
-                  </p>
-                  <button
-                    onClick={() => {
-                      document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="mt-4 px-8 py-3 border border-cream text-cream text-sm tracking-widest uppercase transition-all duration-300 hover:bg-cream hover:text-charcoal cursor-none"
-                    style={{ fontFamily: "var(--font-bebas)", fontSize: "14px", letterSpacing: "0.2em" }}
-                  >
-                    Get a Quote
-                  </button>
-                </div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-cormorant)",
+                    fontSize: "17px",
+                    fontStyle: "italic",
+                    color: "rgba(242,235,217,0.65)",
+                    lineHeight: "1.6",
+                  }}
+                >
+                  Every piece is priced by size, placement, and complexity.
+                  Custom quotes provided after consultation.
+                </p>
+                <button
+                  onClick={() => {
+                    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="cursor-none mt-7 w-full py-3 transition-opacity duration-200 hover:opacity-75"
+                  style={{
+                    fontFamily: "var(--font-bebas)",
+                    fontSize: "13px",
+                    letterSpacing: "0.18em",
+                    background: "#A63324",
+                    color: "#F2EBD9",
+                    border: "none",
+                  }}
+                >
+                  Get a Quote
+                </button>
               </div>
 
-              {/* Caption below */}
               <p
-                className="mt-4 text-right"
+                className="mt-3"
                 style={{
                   fontFamily: "var(--font-space-mono)",
-                  fontSize: "10px",
-                  color: "rgba(26,20,16,0.4)",
-                  letterSpacing: "0.15em",
+                  fontSize: "9px",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "rgba(26,20,16,0.3)",
                 }}
               >
-                All packages include licensing rights
+                Deposit required to confirm all bookings
               </p>
             </div>
           </ScrollReveal>
