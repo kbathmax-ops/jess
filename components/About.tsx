@@ -38,11 +38,11 @@ export default function About() {
             <ScrollReveal direction="right" delay={0.1}>
               <h2
                 style={{
-                  fontFamily: "var(--font-host-grotesk)",
-                  fontSize: "clamp(34px, 5.5vw, 64px)",
+                  fontFamily: "var(--font-condensed)",
+                  fontSize: "clamp(52px, 8vw, 100px)",
                   fontWeight: 800,
                   textTransform: "uppercase",
-                  letterSpacing: "-0.01em",
+                  letterSpacing: "0.01em",
                   color: "#1A1410",
                   lineHeight: 1.0,
                 }}
@@ -99,7 +99,7 @@ export default function About() {
                   <div key={stat.label}>
                     <p
                       style={{
-                        fontFamily: "var(--font-host-grotesk)",
+                        fontFamily: "var(--font-condensed)",
                         fontWeight: 800,
                         fontSize: "40px",
                         color: "#A63324",

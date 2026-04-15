@@ -6,51 +6,64 @@ export default function Hero() {
   return (
     <section
       className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden"
-      style={{ minHeight: "100dvh", background: "#F2EBD9", paddingTop: "70px", paddingBottom: "64px", paddingLeft: "20px", paddingRight: "20px" }}
+      style={{
+        minHeight: "100dvh",
+        background: "#F2EBD9",
+        paddingTop: "70px",
+        paddingBottom: "64px",
+        paddingLeft: "20px",
+        paddingRight: "20px",
+      }}
     >
-      {/* TATTOOS */}
+      {/* Main title */}
       <h1
         className="hero-word"
         style={{
-          fontFamily: "var(--font-host-grotesk)",
+          fontFamily: "var(--font-condensed)",
           fontWeight: 800,
-          fontSize: "clamp(72px, 18vw, 210px)",
+          fontSize: "clamp(80px, 20vw, 240px)",
           color: "#A63324",
           lineHeight: 0.88,
-          letterSpacing: "-0.02em",
-          animationDelay: "0.12s",
+          letterSpacing: "-0.01em",
+          textTransform: "uppercase",
+          animationDelay: "0.1s",
         }}
       >
         TATTOOS
       </h1>
 
-      {/* by Jess */}
       <h2
-        className="hero-word mt-2"
+        className="hero-word"
         style={{
-          fontFamily: "var(--font-host-grotesk)",
+          fontFamily: "var(--font-condensed)",
           fontWeight: 700,
-          fontSize: "clamp(32px, 7.5vw, 94px)",
+          fontSize: "clamp(36px, 8.5vw, 108px)",
           color: "#1A1410",
-          lineHeight: 1.05,
-          letterSpacing: "0.08em",
+          lineHeight: 1.0,
+          letterSpacing: "0.04em",
           textTransform: "uppercase",
-          animationDelay: "0.3s",
+          animationDelay: "0.25s",
         }}
       >
-        by Jess
+        BY JESS
       </h2>
 
       {/* Thin rule */}
       <div
-        className="hero-word rule-thin mt-6 w-16"
-        style={{ animationDelay: "0.52s" }}
+        className="hero-word"
+        style={{
+          width: "56px",
+          height: "1.5px",
+          background: "#A63324",
+          margin: "20px auto 0",
+          animationDelay: "0.45s",
+        }}
       />
 
       {/* CTAs */}
       <div
-        className="hero-word mt-6 flex flex-col sm:flex-row items-center justify-center gap-3"
-        style={{ animationDelay: "0.68s" }}
+        className="hero-word mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-sm sm:max-w-none"
+        style={{ animationDelay: "0.6s" }}
       >
         <button
           onClick={() =>
@@ -58,11 +71,11 @@ export default function Hero() {
           }
           className="cursor-none transition-opacity duration-200 hover:opacity-80 w-full sm:w-auto"
           style={{
-            fontFamily: "var(--font-host-grotesk)",
+            fontFamily: "var(--font-condensed)",
             fontWeight: 700,
-            fontSize: "12px",
-            letterSpacing: "0.18em",
-            padding: "13px 36px",
+            fontSize: "16px",
+            letterSpacing: "0.12em",
+            padding: "13px 40px",
             background: "#A63324",
             color: "#F2EBD9",
             border: "none",
@@ -75,11 +88,11 @@ export default function Hero() {
           href="/portfolio"
           className="cursor-none transition-opacity duration-200 hover:opacity-60 w-full sm:w-auto text-center"
           style={{
-            fontFamily: "var(--font-host-grotesk)",
+            fontFamily: "var(--font-condensed)",
             fontWeight: 700,
-            fontSize: "12px",
-            letterSpacing: "0.18em",
-            padding: "13px 36px",
+            fontSize: "16px",
+            letterSpacing: "0.12em",
+            padding: "13px 40px",
             background: "transparent",
             color: "#1A1410",
             border: "1px solid rgba(26,20,16,0.2)",

@@ -45,9 +45,9 @@ export default function Portfolio() {
         </Link>
         <span
           style={{
-            fontFamily: "var(--font-host-grotesk)",
-            fontSize: "13px",
-            fontWeight: 700,
+            fontFamily: "var(--font-condensed)",
+            fontSize: "16px",
+            fontWeight: 800,
             letterSpacing: "0.22em",
             textTransform: "uppercase",
             color: "#F2EBD9",
@@ -89,9 +89,9 @@ export default function Portfolio() {
           </p>
           <h1
             style={{
-              fontFamily: "var(--font-host-grotesk)",
+              fontFamily: "var(--font-condensed)",
               fontWeight: 800,
-              fontSize: "clamp(52px, 12vw, 140px)",
+              fontSize: "clamp(72px, 16vw, 180px)",
               color: "#F2EBD9",
               lineHeight: 0.9,
               letterSpacing: "-0.02em",

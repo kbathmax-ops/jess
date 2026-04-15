@@ -64,9 +64,9 @@ export default function Deliverables() {
             <h2
               className="leading-none"
               style={{
-                fontFamily: "var(--font-host-grotesk)",
+                fontFamily: "var(--font-condensed)",
                 fontWeight: 800,
-                fontSize: "clamp(50px, 11vw, 130px)",
+                fontSize: "clamp(60px, 13vw, 150px)",
                 letterSpacing: "-0.02em",
                 color: "#1A1410",
                 lineHeight: 0.9,
@@ -100,9 +100,9 @@ export default function Deliverables() {
                     </span>
                     <h3
                       style={{
-                        fontFamily: "var(--font-host-grotesk)",
-                        fontSize: "clamp(18px, 2.8vw, 26px)",
-                        fontWeight: 700,
+                        fontFamily: "var(--font-condensed)",
+                        fontSize: "clamp(22px, 3.5vw, 34px)",
+                        fontWeight: 800,
                         textTransform: "uppercase",
                         letterSpacing: "0.01em",
                         color: "#1A1410",
@@ -133,9 +133,9 @@ export default function Deliverables() {
                 <h3
                   className="mb-5"
                   style={{
-                    fontFamily: "var(--font-host-grotesk)",
+                    fontFamily: "var(--font-condensed)",
                     fontWeight: 800,
-                    fontSize: "22px",
+                    fontSize: "28px",
                     textTransform: "uppercase",
                     letterSpacing: "0.01em",
                     color: "#1A1410",
@@ -195,9 +195,9 @@ export default function Deliverables() {
                 <p
                   className="leading-none mb-1"
                   style={{
-                    fontFamily: "var(--font-host-grotesk)",
+                    fontFamily: "var(--font-condensed)",
                     fontWeight: 800,
-                    fontSize: "clamp(64px, 10vw, 100px)",
+                    fontSize: "clamp(80px, 12vw, 120px)",
                     color: "#F2EBD9",
                     letterSpacing: "-0.02em",
                   }}

@@ -10,10 +10,10 @@ export default function Nav() {
       <Link
         href="/"
         style={{
-          fontFamily: "var(--font-host-grotesk)",
-          fontSize: "13px",
-          fontWeight: 700,
-          letterSpacing: "0.22em",
+          fontFamily: "var(--font-condensed)",
+          fontSize: "18px",
+          fontWeight: 800,
+          letterSpacing: "0.18em",
           textTransform: "uppercase",
           textDecoration: "none",
           color: "#1A1410",

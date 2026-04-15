@@ -9,11 +9,10 @@
   --color-bark: #2C1A0E;
   --color-gold: #C8A96E;
 
-  --font-display: var(--font-host-grotesk), sans-serif;
-  --font-headline: var(--font-host-grotesk), sans-serif;
+  --font-display: var(--font-condensed), sans-serif;
+  --font-headline: var(--font-condensed), sans-serif;
   --font-body: var(--font-host-grotesk), sans-serif;
   --font-mono: 'Space Mono', monospace;
-  --font-oswald: var(--font-host-grotesk), sans-serif;
 }
 
 * {
@@ -74,6 +73,29 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 2;
+}
+
+/* ─── Split Intro ─── */
+.split-panel-top {
+  transform: translateY(0);
+  transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.split-panel-top.open {
+  transform: translateY(-100%);
+}
+.split-panel-bottom {
+  transform: translateY(0);
+  transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.split-panel-bottom.open {
+  transform: translateY(100%);
+}
+.split-title {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.split-title.fade {
+  opacity: 0;
 }
 
 /* ─── Hero Animations ─── */

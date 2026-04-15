@@ -24,11 +24,11 @@ export default function Work() {
             <h2
               className="leading-none"
               style={{
-                fontFamily: "var(--font-host-grotesk)",
+                fontFamily: "var(--font-condensed)",
                 fontWeight: 800,
-                fontSize: "clamp(52px, 12vw, 140px)",
+                fontSize: "clamp(64px, 14vw, 160px)",
                 color: "#F2EBD9",
-                letterSpacing: "-0.02em",
+                letterSpacing: "-0.01em",
                 lineHeight: 0.9,
               }}
             >

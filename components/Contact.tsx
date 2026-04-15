@@ -45,12 +45,12 @@ export default function Contact() {
           <ScrollReveal>
             <h2
               style={{
-                fontFamily: "var(--font-host-grotesk)",
+                fontFamily: "var(--font-condensed)",
                 fontWeight: 800,
-                fontSize: "clamp(38px, 7vw, 88px)",
-                letterSpacing: "-0.02em",
+                fontSize: "clamp(52px, 9vw, 110px)",
+                letterSpacing: "-0.01em",
                 color: "#F2EBD9",
-                lineHeight: 0.95,
+                lineHeight: 0.92,
               }}
             >
               Let&apos;s Talk <span style={{ color: "#A63324" }}>Ink.</span>

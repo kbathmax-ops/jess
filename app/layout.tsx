@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
+import { Barlow_Condensed } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
+const barlowCondensed = Barlow_Condensed({
+  variable: "--font-condensed",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["700", "800"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -27,10 +28,10 @@ const hostGrotesk = localFont({
 
 export const metadata: Metadata = {
   title: "Tattoos by Jess",
-  description: "Fine line tattoo artist based in South Florida. Custom pieces, flash designs, and bookings.",
+  description: "Fine line tattoo artist based in Toronto. Custom pieces, flash designs, and bookings.",
   openGraph: {
     title: "Tattoos by Jess",
-    description: "Fine line tattoo artist based in South Florida. Custom pieces, flash designs, and bookings.",
+    description: "Fine line tattoo artist based in Toronto. Custom pieces, flash designs, and bookings.",
     type: "website",
   },
 };
@@ -43,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceMono.variable} ${hostGrotesk.variable}`}
+      className={`${barlowCondensed.variable} ${hostGrotesk.variable}`}
     >
       <body className="min-h-screen antialiased">{children}</body>
     </html>

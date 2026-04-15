@@ -15,9 +15,9 @@ export default function Footer() {
         <div>
           <span
             style={{
-              fontFamily: "var(--font-host-grotesk)",
-              fontWeight: 700,
-              fontSize: "16px",
+              fontFamily: "var(--font-condensed)",
+              fontWeight: 800,
+              fontSize: "20px",
               textTransform: "uppercase",
               letterSpacing: "0.06em",
               color: "#F2EBD9",
