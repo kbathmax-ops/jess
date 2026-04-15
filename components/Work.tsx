@@ -77,35 +77,6 @@ export default function Work() {
                     sizes="(max-width: 768px) 50vw, 33vw"
                     quality={80}
                   />
-                  <div className="work-tile-overlay">
-                    <div>
-                      <p
-                        style={{
-                          fontFamily: "var(--font-host-grotesk)",
-                          fontWeight: 500,
-                          fontSize: "11px",
-                          letterSpacing: "0.2em",
-                          textTransform: "uppercase",
-                          color: "rgba(242,235,217,0.5)",
-                          marginBottom: "4px",
-                        }}
-                      >
-                        {tile.sub}
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: "var(--font-host-grotesk)",
-                          fontWeight: 700,
-                          fontSize: "18px",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.02em",
-                          color: "#F2EBD9",
-                        }}
-                      >
-                        {tile.label}
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </ScrollReveal>
