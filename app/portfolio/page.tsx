@@ -85,7 +85,7 @@ export default function Portfolio() {
               color: "rgba(242,235,217,0.3)",
             }}
           >
-            Fine Line · Custom Ink · South Florida
+            Fine Line · Custom Ink · Toronto
           </p>
           <h1
             style={{
