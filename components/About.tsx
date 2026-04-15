@@ -47,9 +47,9 @@ export default function About() {
                   lineHeight: 1.0,
                 }}
               >
-                Art that lives
+                Tattoos are more than
                 <br />
-                <span style={{ color: "#A63324" }}>on you.</span>
+                <span style={{ color: "#A63324" }}>a design.</span>
               </h2>
             </ScrollReveal>
 
@@ -67,9 +67,11 @@ export default function About() {
                   fontWeight: 500,
                 }}
               >
-                Fine line and custom tattoo work built around your vision — every
-                piece is drawn from scratch, made to last, and meant to feel like
-                it was always there.
+                A tattoo is a declaration — of who you are, what you've been
+                through, and what you carry with you. Every piece I create is
+                rooted in that idea. Whether it&apos;s a symbol tied to your
+                culture, a reminder of someone you love, or a mark of a chapter
+                you&apos;ve closed, your ink deserves to be treated with that weight.
               </p>
             </ScrollReveal>
 
@@ -83,47 +85,10 @@ export default function About() {
                   fontWeight: 500,
                 }}
               >
-                Based out of a private studio in North York, Toronto.
-                Bookings open quarterly — secure yours early.
+                I work with you to translate your beliefs into fine line work
+                that feels intentional, personal, and made to last — out of a
+                private studio in North York, Toronto.
               </p>
-            </ScrollReveal>
-
-            {/* Stats */}
-            <ScrollReveal direction="right" delay={0.38}>
-              <div className="flex gap-8 pt-1">
-                {[
-                  { num: "200+", label: "Tattoos" },
-                  { num: "3+",   label: "Years" },
-                  { num: "18+",  label: "Only" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-condensed)",
-                        fontWeight: 800,
-                        fontSize: "40px",
-                        color: "#A63324",
-                        lineHeight: 1,
-                      }}
-                    >
-                      {stat.num}
-                    </p>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-host-grotesk)",
-                        fontWeight: 600,
-                        fontSize: "11px",
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: "rgba(26,20,16,0.4)",
-                        marginTop: "4px",
-                      }}
-                    >
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </ScrollReveal>
           </div>
         </div>
