@@ -14,7 +14,7 @@ const images = [
   "IMG_1847.jpg","IMG_1852.jpg","IMG_1858.jpg","IMG_1863.jpg",
   "IMG_1864.jpg","IMG_8657.jpg","IMG_9117.jpg","IMG_9130.jpg",
   "IMG_9133.jpg","IMG_9421.jpg","IMG_9474.jpg","IMG_9583.jpg",
-  "IMG_9583b.jpg","IMG_9585.jpg","IMG_9775-preview.jpg","IMG_9894.jpg",
+  "IMG_9585.jpg","IMG_9775-preview.jpg","IMG_9894.jpg",
   "48bf8682-d664-4114-8c95-2ed1602f4589.jpg",
   "64d7c61b-5e06-4498-bd48-b263f3fdda0b.jpg",
   "6c58358c-72eb-4d02-8aa6-1acf48676f76.jpg",
@@ -23,6 +23,7 @@ const images = [
   "948ab1d0-5226-4099-9599-e868ce366ea3.jpg",
   "a2962f92-0ccc-493e-baf3-4988bf7e857b.jpg",
   "img_5006.jpg",
+  "img_2189.png",
 ];
 
 export default function Portfolio() {
