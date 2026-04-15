@@ -21,7 +21,7 @@ export default function Hero() {
         alt="Jess tattooing in studio"
         fill
         priority
-        style={{ objectFit: "cover", objectPosition: "center top" }}
+        style={{ objectFit: "cover", objectPosition: "center center" }}
       />
 
       {/* Dark overlay */}
@@ -38,8 +38,8 @@ export default function Hero() {
           style={{
             fontFamily: "var(--font-condensed)",
             fontWeight: 800,
-            fontSize: "clamp(80px, 20vw, 240px)",
-            color: "#A63324",
+            fontSize: "clamp(100px, 26vw, 300px)",
+            color: "#F2EBD9",
             lineHeight: 0.88,
             letterSpacing: "-0.01em",
             textTransform: "uppercase",
