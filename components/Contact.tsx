@@ -59,7 +59,7 @@ export default function Contact() {
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
             <p
-              className="mt-3 text-center"
+              className="mt-3 text-center mx-auto"
               style={{
                 fontFamily: "var(--font-host-grotesk)",
                 fontWeight: 500,
