@@ -338,10 +338,11 @@ export default function Contact() {
                     </span>
                     <span
                       style={{
-                        fontFamily: "var(--font-cormorant)",
+                        fontFamily: "var(--font-oswald)",
                         fontSize: "17px",
-                        fontStyle: "italic",
+                        fontWeight: 600,
                         color: "#F2EBD9",
+                        letterSpacing: "0.02em",
                       }}
                     >
                       {item.value}

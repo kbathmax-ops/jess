@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import {
-  Cormorant_Garamond,
+  Anton,
   Bebas_Neue,
-  DM_Sans,
+  Oswald,
   Space_Mono,
+  Barlow,
 } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const anton = Anton({
+  variable: "--font-anton",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
-  style: ["normal", "italic"],
+  weight: "400",
   display: "swap",
 });
 
@@ -22,10 +22,10 @@ const bebas = Bebas_Neue({
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -33,6 +33,13 @@ const spaceMono = Space_Mono({
   variable: "--font-space-mono",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
+});
+
+const barlow = Barlow({
+  variable: "--font-barlow",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -54,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${bebas.variable} ${dmSans.variable} ${spaceMono.variable}`}
+      className={`${anton.variable} ${bebas.variable} ${oswald.variable} ${spaceMono.variable} ${barlow.variable}`}
     >
       <body className="min-h-screen antialiased">{children}</body>
     </html>

@@ -9,11 +9,11 @@
   --color-bark: #2C1A0E;
   --color-gold: #C8A96E;
 
-  --font-display: 'Cormorant Garamond', serif;
+  --font-display: 'Anton', sans-serif;
   --font-headline: 'Bebas Neue', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-body: 'Barlow', sans-serif;
   --font-mono: 'Space Mono', monospace;
-  --font-script: 'Pinyon Script', cursive;
+  --font-oswald: 'Oswald', sans-serif;
 }
 
 * {
@@ -27,7 +27,8 @@ html {
 body {
   background-color: #F2EBD9;
   color: #1A1410;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
   overflow-x: hidden;
   cursor: none;
 }
@@ -180,7 +181,7 @@ body {
   border: none;
   border-bottom: 1px solid rgba(242,235,217,0.3);
   color: #F2EBD9;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 16px;
   padding: 14px 0;
   width: 100%;

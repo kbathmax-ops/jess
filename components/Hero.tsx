@@ -3,134 +3,165 @@
 export default function Hero() {
   return (
     <section
-      className="relative w-full flex flex-col overflow-hidden"
-      style={{ background: "#F2EBD9", minHeight: "100dvh" }}
+      className="relative w-full overflow-hidden"
+      style={{ minHeight: "100dvh", background: "#F2EBD9" }}
     >
-      {/* Main content — flex column fills height */}
-      <div className="flex-1 flex flex-col justify-center px-5 md:px-10 lg:px-14 pt-[88px] pb-0">
+      <div className="flex min-h-[100dvh]">
 
-        {/* Eyebrow label */}
-        <p
-          className="hero-word mb-4 md:mb-5"
-          style={{
-            fontFamily: "var(--font-space-mono)",
-            fontSize: "9px",
-            letterSpacing: "0.42em",
-            color: "rgba(26,20,16,0.38)",
-            textTransform: "uppercase",
-            animationDelay: "0.05s",
-          }}
+        {/* ── Left: Type panel ── */}
+        <div
+          className="flex flex-col justify-center pt-[88px] pb-10 px-5 md:px-10 lg:px-14"
+          style={{ flex: "1 1 0", minWidth: 0 }}
         >
-          Fine Line · Custom Ink · South Florida
-        </p>
-
-        {/* TATTOOS — fills viewport width, bleeds on large screens */}
-        <div style={{ overflow: "hidden", marginLeft: "-2px" }}>
-          <h1
-            className="hero-word leading-none"
+          {/* Eyebrow */}
+          <p
+            className="hero-word mb-4 md:mb-5"
             style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(80px, 21.5vw, 280px)",
+              fontFamily: "var(--font-space-mono)",
+              fontSize: "9px",
+              letterSpacing: "0.42em",
+              color: "rgba(26,20,16,0.38)",
+              textTransform: "uppercase",
+              animationDelay: "0.05s",
+            }}
+          >
+            Fine Line · Custom Ink · South Florida
+          </p>
+
+          {/* TATTOOS — Anton, dominant */}
+          <h1
+            className="hero-word"
+            style={{
+              fontFamily: "var(--font-anton)",
+              fontWeight: 400,
+              fontSize: "clamp(68px, 13.5vw, 172px)",
               color: "#A63324",
+              lineHeight: 0.88,
               letterSpacing: "-0.01em",
-              lineHeight: 0.87,
               animationDelay: "0.12s",
-              whiteSpace: "nowrap",
             }}
           >
             TATTOOS
           </h1>
-        </div>
 
-        {/* "by Jess" + floating photo — same horizontal row on desktop */}
-        <div className="flex items-end justify-between mt-1 md:mt-2">
+          {/* by Jess — Oswald Bold, offset indent */}
           <h2
-            className="hero-word"
+            className="hero-word mt-1 md:mt-2"
             style={{
-              fontFamily: "var(--font-cormorant)",
-              fontStyle: "italic",
-              fontWeight: 600,
-              fontSize: "clamp(36px, 8.8vw, 120px)",
+              fontFamily: "var(--font-oswald)",
+              fontWeight: 700,
+              fontSize: "clamp(30px, 5.8vw, 76px)",
               color: "#1A1410",
-              lineHeight: 1,
-              animationDelay: "0.34s",
-              paddingLeft: "clamp(6px, 2.5vw, 40px)",
+              lineHeight: 1.05,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              animationDelay: "0.3s",
+              paddingLeft: "clamp(4px, 1.5vw, 18px)",
             }}
           >
             by Jess
           </h2>
 
-          {/* Editorial photo block — desktop only, floats beside the script */}
+          {/* Thin rule */}
           <div
-            className="hero-word hidden md:block"
-            style={{
-              width: "clamp(100px, 11vw, 170px)",
-              aspectRatio: "3/4",
-              background: "linear-gradient(155deg, #2C1A0E 0%, #6B1818 55%, #A63324 100%)",
-              filter: "sepia(10%) contrast(1.1)",
-              flexShrink: 0,
-              marginRight: "1vw",
-              animationDelay: "0.5s",
-            }}
+            className="hero-word rule-thin mt-7 md:mt-9"
+            style={{ animationDelay: "0.52s" }}
           />
-        </div>
 
-        {/* Thin rule */}
-        <div
-          className="hero-word mt-7 md:mt-9 rule-thin"
-          style={{ animationDelay: "0.58s" }}
-        />
-
-        {/* Bottom row: availability note + CTAs */}
-        <div
-          className="hero-word mt-5 md:mt-6 pb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-5"
-          style={{ animationDelay: "0.7s" }}
-        >
-          <p
-            style={{
-              fontFamily: "var(--font-space-mono)",
-              fontSize: "9px",
-              letterSpacing: "0.32em",
-              color: "rgba(26,20,16,0.38)",
-              textTransform: "uppercase",
-            }}
+          {/* Availability + CTAs */}
+          <div
+            className="hero-word mt-5 pb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5"
+            style={{ animationDelay: "0.68s" }}
           >
-            Accepting bookings — Q2 2026
-          </p>
+            <p
+              style={{
+                fontFamily: "var(--font-space-mono)",
+                fontSize: "9px",
+                letterSpacing: "0.32em",
+                color: "rgba(26,20,16,0.38)",
+                textTransform: "uppercase",
+              }}
+            >
+              Accepting bookings — Q2 2026
+            </p>
 
-          <div className="flex gap-3 flex-wrap">
-            <button
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="cursor-none transition-opacity duration-200 hover:opacity-80"
-              style={{
-                fontFamily: "var(--font-bebas)",
-                fontSize: "14px",
-                letterSpacing: "0.16em",
-                padding: "11px 30px",
-                background: "#A63324",
-                color: "#F2EBD9",
-                border: "none",
-              }}
-            >
-              Book a Session
-            </button>
-            <button
-              onClick={() => document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" })}
-              className="cursor-none transition-opacity duration-200 hover:opacity-60"
-              style={{
-                fontFamily: "var(--font-bebas)",
-                fontSize: "14px",
-                letterSpacing: "0.16em",
-                padding: "11px 30px",
-                background: "transparent",
-                color: "#1A1410",
-                border: "1px solid rgba(26,20,16,0.2)",
-              }}
-            >
-              View Work
-            </button>
+            <div className="flex gap-3 flex-wrap">
+              <button
+                onClick={() =>
+                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="cursor-none transition-opacity duration-200 hover:opacity-80"
+                style={{
+                  fontFamily: "var(--font-bebas)",
+                  fontSize: "14px",
+                  letterSpacing: "0.16em",
+                  padding: "11px 30px",
+                  background: "#A63324",
+                  color: "#F2EBD9",
+                  border: "none",
+                }}
+              >
+                Book a Session
+              </button>
+              <button
+                onClick={() =>
+                  document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="cursor-none transition-opacity duration-200 hover:opacity-60"
+                style={{
+                  fontFamily: "var(--font-bebas)",
+                  fontSize: "14px",
+                  letterSpacing: "0.16em",
+                  padding: "11px 30px",
+                  background: "transparent",
+                  color: "#1A1410",
+                  border: "1px solid rgba(26,20,16,0.2)",
+                }}
+              >
+                View Work
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* ── Right: Photo panel — desktop only ── */}
+        <div
+          className="hidden md:block shrink-0 relative overflow-hidden"
+          style={{ width: "40vw" }}
+        >
+          {/* Gradient placeholder — swap for <Image> once real photo is available */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(160deg, #3C1A0E 0%, #7A1515 35%, #A63324 65%, #C86040 100%)",
+            }}
+          />
+          {/* Grain texture */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`,
+              opacity: 0.08,
+            }}
+          />
+          {/* Vertical studio label */}
+          <p
+            className="absolute bottom-10 right-6"
+            style={{
+              fontFamily: "var(--font-space-mono)",
+              fontSize: "8px",
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+              color: "rgba(242,235,217,0.3)",
+              writingMode: "vertical-rl",
+              textOrientation: "mixed",
+            }}
+          >
+            South Florida Studio
+          </p>
+        </div>
+
       </div>
 
       {/* Scroll indicator */}

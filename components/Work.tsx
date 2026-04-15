@@ -142,9 +142,11 @@ export default function Work() {
                       </p>
                       <p
                         style={{
-                          fontFamily: "var(--font-cormorant)",
+                          fontFamily: "var(--font-oswald)",
                           fontSize: "20px",
-                          fontStyle: "italic",
+                          fontWeight: 700,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.04em",
                           color: "#F2EBD9",
                         }}
                       >

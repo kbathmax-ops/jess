@@ -77,12 +77,13 @@ export default function About() {
               <h2
                 className="leading-tight"
                 style={{
-                  fontFamily: "var(--font-cormorant)",
+                  fontFamily: "var(--font-oswald)",
                   fontSize: "clamp(38px, 5.5vw, 68px)",
-                  fontStyle: "italic",
-                  fontWeight: 600,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.02em",
                   color: "#1A1410",
-                  lineHeight: 1.08,
+                  lineHeight: 1.05,
                 }}
               >
                 Art that lives
@@ -101,11 +102,11 @@ export default function About() {
             <ScrollReveal direction="right" delay={0.22}>
               <p
                 style={{
-                  fontFamily: "var(--font-dm-sans)",
+                  fontFamily: "var(--font-barlow)",
                   fontSize: "15px",
                   color: "rgba(26,20,16,0.68)",
-                  lineHeight: "1.85",
-                  fontWeight: 300,
+                  lineHeight: "1.75",
+                  fontWeight: 700,
                 }}
               >
                 I specialize in fine line and custom tattoo work — designs built around
@@ -117,11 +118,11 @@ export default function About() {
             <ScrollReveal direction="right" delay={0.3}>
               <p
                 style={{
-                  fontFamily: "var(--font-dm-sans)",
+                  fontFamily: "var(--font-barlow)",
                   fontSize: "15px",
                   color: "rgba(26,20,16,0.68)",
-                  lineHeight: "1.85",
-                  fontWeight: 300,
+                  lineHeight: "1.75",
+                  fontWeight: 700,
                 }}
               >
                 Based in South Florida, I work out of a private studio and travel for

@@ -76,10 +76,11 @@ export default function Deliverables() {
                     </span>
                     <h3
                       style={{
-                        fontFamily: "var(--font-cormorant)",
+                        fontFamily: "var(--font-oswald)",
                         fontSize: "clamp(20px, 2.8vw, 30px)",
-                        fontStyle: "italic",
-                        fontWeight: 600,
+                        fontWeight: 700,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.03em",
                         color: "#1A1410",
                       }}
                     >
@@ -88,11 +89,11 @@ export default function Deliverables() {
                   </div>
                   <p
                     style={{
-                      fontFamily: "var(--font-dm-sans)",
+                      fontFamily: "var(--font-barlow)",
                       fontSize: "13px",
-                      color: "rgba(26,20,16,0.52)",
-                      lineHeight: "1.75",
-                      fontWeight: 300,
+                      color: "rgba(26,20,16,0.6)",
+                      lineHeight: "1.7",
+                      fontWeight: 700,
                       paddingLeft: "clamp(24px, 3vw, 40px)",
                     }}
                   >
@@ -139,11 +140,12 @@ export default function Deliverables() {
                 />
                 <p
                   style={{
-                    fontFamily: "var(--font-cormorant)",
+                    fontFamily: "var(--font-oswald)",
                     fontSize: "17px",
-                    fontStyle: "italic",
-                    color: "rgba(242,235,217,0.65)",
-                    lineHeight: "1.6",
+                    fontWeight: 500,
+                    color: "rgba(242,235,217,0.75)",
+                    lineHeight: "1.55",
+                    letterSpacing: "0.01em",
                   }}
                 >
                   Every piece is priced by size, placement, and complexity.

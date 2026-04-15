@@ -14,9 +14,11 @@ export default function Footer() {
           <div>
             <p
               style={{
-                fontFamily: "var(--font-cormorant)",
-                fontStyle: "italic",
+                fontFamily: "var(--font-oswald)",
+                fontWeight: 700,
                 fontSize: "22px",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
                 color: "#F2EBD9",
               }}
             >
