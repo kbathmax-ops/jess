@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-16 md:py-[90px] px-5 md:px-10 lg:px-14"
+      className="relative py-10 md:py-14 px-5 md:px-10 lg:px-14"
       style={{ background: "#F2EBD9" }}
     >
       <div className="max-w-5xl mx-auto">
@@ -34,17 +34,18 @@ export default function About() {
           </ScrollReveal>
 
           {/* Text block */}
-          <div className="flex flex-col gap-6 md:pt-3">
+          <div className="flex flex-col gap-5 md:pt-3 items-center text-center">
             <ScrollReveal direction="right" delay={0.1}>
               <h2
                 style={{
                   fontFamily: "var(--font-condensed)",
-                  fontSize: "clamp(52px, 8vw, 100px)",
+                  fontSize: "clamp(36px, 5.5vw, 64px)",
                   fontWeight: 800,
                   textTransform: "uppercase",
                   letterSpacing: "0.01em",
                   color: "#1A1410",
-                  lineHeight: 1.0,
+                  lineHeight: 0.95,
+                  textAlign: "center",
                 }}
               >
                 Tattoos are more than
@@ -54,7 +55,7 @@ export default function About() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.18}>
-              <div style={{ width: "48px", background: "#A63324", height: "2px" }} />
+              <div style={{ width: "48px", background: "#A63324", height: "2px", margin: "0 auto" }} />
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.22}>

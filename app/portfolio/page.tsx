@@ -1,19 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 import Cursor from "@/components/Cursor";
 
-const pieces = [
-  { label: "Fine Line Florals",    sub: "Custom · 2025",  bg: "#A63324" },
-  { label: "Geometric",            sub: "Custom · 2025",  bg: "#3C2A18" },
-  { label: "Script & Lettering",   sub: "Custom · 2024",  bg: "#1A1410" },
-  { label: "Blackwork",            sub: "Flash · 2025",   bg: "#2C1A0E" },
-  { label: "Botanicals",           sub: "Flash · 2024",   bg: "#5C1515" },
-  { label: "Micro Realism",        sub: "Custom · 2025",  bg: "#7A1515" },
-  { label: "Fine Line Portrait",   sub: "Custom · 2025",  bg: "#A63324" },
-  { label: "Ornamental",           sub: "Custom · 2024",  bg: "#3C2A18" },
-  { label: "Abstract Linework",    sub: "Custom · 2025",  bg: "#2C1A0E" },
-  { label: "Neo Traditional",      sub: "Custom · 2024",  bg: "#5C1515" },
-  { label: "Minimalist Symbol",    sub: "Flash · 2025",   bg: "#1A1410" },
-  { label: "Botanical Sleeve",     sub: "Custom · 2025",  bg: "#7A1515" },
+const images = [
+  "IMG_0032.jpg","IMG_0045.jpg","IMG_0174.jpg","IMG_0192.jpg",
+  "IMG_0278.jpg","IMG_0280.jpg","IMG_0451.jpg","IMG_0458.jpg",
+  "IMG_0507.jpg","IMG_0510.jpg","IMG_0743.jpg","IMG_0859.jpg",
+  "IMG_0957.jpg","IMG_1132.jpg","IMG_1226.jpg","IMG_1290.jpg",
+  "IMG_1319.jpg","IMG_1323.jpg","IMG_1390.jpg","IMG_1454.jpg",
+  "IMG_1474.jpg","IMG_1476.jpg","IMG_1577.jpg","IMG_1624.jpg",
+  "IMG_1625.jpg","IMG_1636.jpg","IMG_1649.jpg","IMG_1657.jpg",
+  "IMG_1742.jpg","IMG_1745.jpg","IMG_1753.jpg","IMG_1754.jpg",
+  "IMG_1847.jpg","IMG_1852.jpg","IMG_1858.jpg","IMG_1863.jpg",
+  "IMG_1864.jpg","IMG_8657.jpg","IMG_9117.jpg","IMG_9130.jpg",
+  "IMG_9133.jpg","IMG_9421.jpg","IMG_9474.jpg","IMG_9583.jpg",
+  "IMG_9583b.jpg","IMG_9585.jpg","IMG_9775-preview.jpg","IMG_9894.jpg",
+  "48bf8682-d664-4114-8c95-2ed1602f4589.jpg",
+  "64d7c61b-5e06-4498-bd48-b263f3fdda0b.jpg",
+  "6c58358c-72eb-4d02-8aa6-1acf48676f76.jpg",
+  "822f38bb-71ba-41cf-ab5a-5ee35a5c0a10.jpg",
+  "9119bbdb-7f2d-443e-8da3-9212437d9c98.jpg",
+  "948ab1d0-5226-4099-9599-e868ce366ea3.jpg",
+  "a2962f92-0ccc-493e-baf3-4988bf7e857b.jpg",
+  "img_5006.jpg",
 ];
 
 export default function Portfolio() {
@@ -33,11 +42,11 @@ export default function Portfolio() {
         <Link
           href="/"
           style={{
-            fontFamily: "var(--font-space-mono)",
-            fontSize: "9px",
-            letterSpacing: "0.3em",
-            textTransform: "uppercase",
-            color: "rgba(242,235,217,0.4)",
+            fontFamily: "var(--font-host-grotesk)",
+            fontWeight: 500,
+            fontSize: "13px",
+            letterSpacing: "0.06em",
+            color: "rgba(242,235,217,0.5)",
             textDecoration: "none",
           }}
         >
@@ -46,9 +55,9 @@ export default function Portfolio() {
         <span
           style={{
             fontFamily: "var(--font-condensed)",
-            fontSize: "16px",
+            fontSize: "18px",
             fontWeight: 800,
-            letterSpacing: "0.22em",
+            letterSpacing: "0.18em",
             textTransform: "uppercase",
             color: "#F2EBD9",
           }}
@@ -58,11 +67,11 @@ export default function Portfolio() {
         <Link
           href="/#contact"
           style={{
-            fontFamily: "var(--font-space-mono)",
-            fontSize: "9px",
-            letterSpacing: "0.3em",
-            textTransform: "uppercase",
-            color: "rgba(242,235,217,0.4)",
+            fontFamily: "var(--font-host-grotesk)",
+            fontWeight: 500,
+            fontSize: "13px",
+            letterSpacing: "0.06em",
+            color: "rgba(242,235,217,0.5)",
             textDecoration: "none",
           }}
         >
@@ -70,134 +79,137 @@ export default function Portfolio() {
         </Link>
       </nav>
 
-      <main
-        style={{ background: "#1A1410", minHeight: "100dvh", paddingTop: "70px" }}
-      >
+      <main style={{ background: "#1A1410", minHeight: "100dvh", paddingTop: "64px" }}>
+
         {/* Header */}
-        <div className="px-5 md:px-10 lg:px-14 pt-12 pb-10">
-          <p
-            className="mb-3"
-            style={{
-              fontFamily: "var(--font-space-mono)",
-              fontSize: "9px",
-              letterSpacing: "0.4em",
-              textTransform: "uppercase",
-              color: "rgba(242,235,217,0.3)",
-            }}
-          >
-            Fine Line · Custom Ink · Toronto
-          </p>
+        <div className="px-5 md:px-10 lg:px-14 pt-10 pb-8">
           <h1
             style={{
               fontFamily: "var(--font-condensed)",
               fontWeight: 800,
               fontSize: "clamp(72px, 16vw, 180px)",
               color: "#F2EBD9",
-              lineHeight: 0.9,
-              letterSpacing: "-0.02em",
+              lineHeight: 0.88,
+              letterSpacing: "-0.01em",
+              textTransform: "uppercase",
             }}
           >
             Portfolio
           </h1>
+          <p
+            className="mt-3"
+            style={{
+              fontFamily: "var(--font-host-grotesk)",
+              fontWeight: 500,
+              fontSize: "15px",
+              color: "rgba(242,235,217,0.4)",
+            }}
+          >
+            {images.length} pieces — fine line · custom · flash
+          </p>
         </div>
 
-        {/* Masonry-style grid */}
-        <div className="px-5 md:px-10 lg:px-14 pb-16">
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2">
-            {pieces.map((piece, i) => (
+        {/* Masonry grid */}
+        <div
+          className="px-5 md:px-10 lg:px-14 pb-16"
+          style={{
+            columns: "2",
+            columnGap: "8px",
+          }}
+          // responsive columns via inline style since Tailwind columns classes may not cover all breakpoints
+        >
+          <style>{`
+            @media (min-width: 640px)  { .portfolio-grid { columns: 3 !important; } }
+            @media (min-width: 1024px) { .portfolio-grid { columns: 4 !important; } }
+          `}</style>
+          <div
+            className="portfolio-grid"
+            style={{ columns: 2, columnGap: "8px" }}
+          >
+            {images.map((src, i) => (
               <div
-                key={piece.label}
-                className="break-inside-avoid work-tile group cursor-none"
+                key={src}
+                className="group cursor-none"
                 style={{
-                  background: piece.bg,
-                  aspectRatio: i % 3 === 0 ? "3/4" : i % 3 === 1 ? "1/1" : "4/5",
-                  display: "block",
+                  breakInside: "avoid",
+                  marginBottom: "8px",
                   position: "relative",
                   overflow: "hidden",
+                  display: "block",
                 }}
               >
-                <div className="work-tile-overlay">
-                  <div>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-space-mono)",
-                        fontSize: "8px",
-                        letterSpacing: "0.3em",
-                        textTransform: "uppercase",
-                        color: "rgba(242,235,217,0.5)",
-                        marginBottom: "4px",
-                      }}
-                    >
-                      {piece.sub}
-                    </p>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-host-grotesk)",
-                        fontWeight: 700,
-                        fontSize: "16px",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.02em",
-                        color: "#F2EBD9",
-                      }}
-                    >
-                      {piece.label}
-                    </p>
-                  </div>
-                </div>
+                <Image
+                  src={`/portfolio/${src}`}
+                  alt={`Tattoo by Jess — piece ${i + 1}`}
+                  width={600}
+                  height={800}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                    filter: "sepia(10%) contrast(1.05) brightness(0.95)",
+                    transition: "filter 0.4s ease, transform 0.4s ease",
+                  }}
+                  className="group-hover:brightness-100 group-hover:sepia-0"
+                  loading={i < 8 ? "eager" : "lazy"}
+                  quality={80}
+                />
               </div>
             ))}
           </div>
         </div>
 
-        {/* CTA footer */}
+        {/* CTA */}
         <div
-          className="px-5 md:px-10 lg:px-14 py-12 text-center"
+          className="px-5 md:px-10 lg:px-14 py-14 flex flex-col sm:flex-row items-center justify-between gap-6"
           style={{ borderTop: "1px solid rgba(242,235,217,0.07)" }}
         >
           <p
-            className="mb-6"
             style={{
-              fontFamily: "var(--font-space-mono)",
-              fontSize: "9px",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              color: "rgba(242,235,217,0.3)",
+              fontFamily: "var(--font-host-grotesk)",
+              fontWeight: 500,
+              fontSize: "17px",
+              color: "rgba(242,235,217,0.5)",
             }}
           >
             Ready for your own piece?
           </p>
-          <Link
-            href="/#contact"
-            style={{
-              fontFamily: "var(--font-host-grotesk)",
-              fontWeight: 700,
-              fontSize: "12px",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              padding: "14px 40px",
-              background: "#A63324",
-              color: "#F2EBD9",
-              textDecoration: "none",
-              display: "inline-block",
-            }}
-          >
-            Book a Session
-          </Link>
-          <div className="mt-8">
+          <div className="flex gap-4 flex-wrap">
+            <Link
+              href="/#contact"
+              style={{
+                fontFamily: "var(--font-condensed)",
+                fontWeight: 800,
+                fontSize: "16px",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                padding: "13px 36px",
+                background: "#A63324",
+                color: "#F2EBD9",
+                textDecoration: "none",
+                display: "inline-block",
+              }}
+            >
+              Book a Session
+            </Link>
             <a
               href="https://www.instagram.com/tattoosbyjesss"
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontFamily: "var(--font-space-mono)",
-                fontSize: "9px",
-                letterSpacing: "0.28em",
+                fontFamily: "var(--font-condensed)",
+                fontWeight: 800,
+                fontSize: "16px",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "rgba(242,235,217,0.3)",
+                padding: "13px 36px",
+                border: "1px solid rgba(242,235,217,0.2)",
+                color: "#F2EBD9",
                 textDecoration: "none",
+                display: "inline-block",
               }}
             >
-              More on @tattoosbyjesss ↗
+              @tattoosbyjesss ↗
             </a>
           </div>
         </div>

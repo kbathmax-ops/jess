@@ -14,22 +14,23 @@ export default function Work() {
   return (
     <section
       id="work"
-      className="grain relative py-16 md:py-[90px] px-5 md:px-10 lg:px-14"
+      className="grain relative py-10 md:py-14 px-5 md:px-10 lg:px-14"
       style={{ background: "#1A1410" }}
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="flex items-end justify-between mb-10 md:mb-[51px] flex-wrap gap-4">
+        <div className="flex flex-col items-center text-center mb-8 gap-3">
           <ScrollReveal>
             <h2
               className="leading-none"
               style={{
                 fontFamily: "var(--font-condensed)",
                 fontWeight: 800,
-                fontSize: "clamp(64px, 14vw, 160px)",
+                fontSize: "clamp(40px, 7vw, 80px)",
                 color: "#F2EBD9",
                 letterSpacing: "-0.01em",
-                lineHeight: 0.9,
+                lineHeight: 0.95,
+                textAlign: "center",
               }}
             >
               My <span style={{ color: "#A63324" }}>Work</span>

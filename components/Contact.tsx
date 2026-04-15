@@ -36,21 +36,22 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="grain relative py-16 md:py-[90px] px-5 md:px-10 lg:px-14"
+      className="grain relative py-10 md:py-14 px-5 md:px-10 lg:px-14"
       style={{ background: "#1A1410" }}
     >
       <div className="max-w-5xl mx-auto">
         {/* Header — compressed */}
-        <div className="mb-10 md:mb-14">
+        <div className="mb-8 md:mb-10">
           <ScrollReveal>
             <h2
               style={{
                 fontFamily: "var(--font-condensed)",
                 fontWeight: 800,
-                fontSize: "clamp(52px, 9vw, 110px)",
+                fontSize: "clamp(36px, 5.5vw, 64px)",
                 letterSpacing: "-0.01em",
                 color: "#F2EBD9",
-                lineHeight: 0.92,
+                lineHeight: 0.95,
+                textAlign: "center",
               }}
             >
               Let&apos;s Talk <span style={{ color: "#A63324" }}>Ink.</span>
@@ -58,7 +59,7 @@ export default function Contact() {
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
             <p
-              className="mt-4"
+              className="mt-3 text-center"
               style={{
                 fontFamily: "var(--font-host-grotesk)",
                 fontWeight: 500,

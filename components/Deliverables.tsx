@@ -54,22 +54,23 @@ export default function Deliverables() {
   return (
     <section
       id="deliverables"
-      className="relative py-16 md:py-[90px] px-5 md:px-10 lg:px-14"
+      className="relative py-10 md:py-14 px-5 md:px-10 lg:px-14"
       style={{ background: "#F2EBD9" }}
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="mb-11 md:mb-[58px]">
+        <div className="mb-7 md:mb-10 text-center">
           <ScrollReveal>
             <h2
               className="leading-none"
               style={{
                 fontFamily: "var(--font-condensed)",
                 fontWeight: 800,
-                fontSize: "clamp(60px, 13vw, 150px)",
-                letterSpacing: "-0.02em",
+                fontSize: "clamp(38px, 6vw, 72px)",
+                letterSpacing: "-0.01em",
                 color: "#1A1410",
-                lineHeight: 0.9,
+                lineHeight: 0.95,
+                textAlign: "center",
               }}
             >
               What I Do
@@ -77,13 +78,13 @@ export default function Deliverables() {
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-[51px] items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-start">
           {/* Service list */}
           <div className="lg:col-span-3 flex flex-col">
             {services.map((s, i) => (
               <ScrollReveal key={s.num} delay={i * 0.06}>
                 <div
-                  className="deliverable-item py-5 border-b"
+                  className="deliverable-item py-3 border-b"
                   style={{ borderColor: "rgba(26,20,16,0.08)" }}
                 >
                   <div className="flex items-baseline gap-4 mb-2">
