@@ -102,7 +102,7 @@ export default function About() {
             <ScrollReveal direction="right" delay={0.22}>
               <p
                 style={{
-                  fontFamily: "var(--font-barlow)",
+                  fontFamily: "var(--font-host-grotesk)",
                   fontSize: "15px",
                   color: "rgba(26,20,16,0.68)",
                   lineHeight: "1.75",
@@ -118,7 +118,7 @@ export default function About() {
             <ScrollReveal direction="right" delay={0.3}>
               <p
                 style={{
-                  fontFamily: "var(--font-barlow)",
+                  fontFamily: "var(--font-host-grotesk)",
                   fontSize: "15px",
                   color: "rgba(26,20,16,0.68)",
                   lineHeight: "1.75",

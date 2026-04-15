@@ -89,7 +89,7 @@ export default function Deliverables() {
                   </div>
                   <p
                     style={{
-                      fontFamily: "var(--font-barlow)",
+                      fontFamily: "var(--font-host-grotesk)",
                       fontSize: "13px",
                       color: "rgba(26,20,16,0.6)",
                       lineHeight: "1.7",

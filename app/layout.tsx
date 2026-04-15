@@ -4,8 +4,8 @@ import {
   Bebas_Neue,
   Oswald,
   Space_Mono,
-  Barlow,
 } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const anton = Anton({
@@ -36,10 +36,18 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
-const barlow = Barlow({
-  variable: "--font-barlow",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
+const hostGrotesk = localFont({
+  src: [
+    {
+      path: "../public/fonts/HostGrotesk-VariableFont_wght.ttf",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/HostGrotesk-Italic-VariableFont_wght.ttf",
+      style: "italic",
+    },
+  ],
+  variable: "--font-host-grotesk",
   display: "swap",
 });
 
@@ -61,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${anton.variable} ${bebas.variable} ${oswald.variable} ${spaceMono.variable} ${barlow.variable}`}
+      className={`${anton.variable} ${bebas.variable} ${oswald.variable} ${spaceMono.variable} ${hostGrotesk.variable}`}
     >
       <body className="min-h-screen antialiased">{children}</body>
     </html>

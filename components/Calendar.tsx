@@ -46,7 +46,7 @@ export default function Calendar() {
           <ScrollReveal direction="right" delay={0.15}>
             <p
               style={{
-                fontFamily: "var(--font-barlow)",
+                fontFamily: "var(--font-host-grotesk)",
                 fontSize: "14px",
                 color: "rgba(26,20,16,0.65)",
                 lineHeight: "1.7",
