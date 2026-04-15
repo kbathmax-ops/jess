@@ -39,7 +39,7 @@ export default function About() {
               <h2
                 style={{
                   fontFamily: "var(--font-condensed)",
-                  fontSize: "clamp(36px, 5.5vw, 64px)",
+                  fontSize: "clamp(22px, 3.3vw, 46px)",
                   fontWeight: 800,
                   textTransform: "uppercase",
                   letterSpacing: "0.01em",

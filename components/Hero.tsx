@@ -32,40 +32,91 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center">
-        {/* Main title */}
-        <h1
-          className="hero-word"
-          style={{
-            fontFamily: "var(--font-condensed)",
-            fontWeight: 800,
-            fontSize: "clamp(100px, 26vw, 300px)",
-            color: "#F2EBD9",
-            lineHeight: 0.88,
-            letterSpacing: "-0.01em",
-            textTransform: "uppercase",
-            animationDelay: "0.1s",
-            opacity: 0.92,
-          }}
-        >
-          TATTOOS
-        </h1>
 
-        <h2
-          className="hero-word"
-          style={{
-            fontFamily: "var(--font-condensed)",
-            fontWeight: 700,
-            fontSize: "clamp(36px, 8.5vw, 108px)",
-            color: "#F2EBD9",
-            lineHeight: 1.0,
-            letterSpacing: "0.04em",
-            textTransform: "uppercase",
-            animationDelay: "0.25s",
-            opacity: 0.88,
-          }}
-        >
-          BY JESS
-        </h2>
+        {/* Title block with Victorian ornament */}
+        <div className="relative flex flex-col items-center" style={{ padding: "28px 48px 18px" }}>
+
+          {/* Victorian oval ornament — draws in after intro */}
+          <svg
+            viewBox="0 0 520 260"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              overflow: "visible",
+              pointerEvents: "none",
+            }}
+          >
+            {/* Main oval */}
+            <path
+              className="ornament-oval"
+              d="M 30,130 C 30,72 118,20 260,20 C 402,20 490,72 490,130 C 490,188 402,240 260,240 C 118,240 30,188 30,130 Z"
+              fill="none"
+              stroke="rgba(242,235,217,0.45)"
+              strokeWidth="1.1"
+              style={{ strokeDasharray: 1140, strokeDashoffset: 1140 }}
+            />
+            {/* Cardinal accents — small arrow points at N/S/E/W */}
+            <path
+              className="ornament-accents"
+              d="M 252,20 L 260,4 L 268,20
+                 M 252,240 L 260,256 L 268,240
+                 M 30,122 L 12,130 L 30,138
+                 M 490,122 L 508,130 L 490,138"
+              fill="none"
+              stroke="rgba(242,235,217,0.45)"
+              strokeWidth="1.1"
+              style={{ strokeDasharray: 220, strokeDashoffset: 220 }}
+            />
+            {/* Small horizontal ticks flanking the side accents */}
+            <path
+              className="ornament-accents"
+              d="M 6,126 L 6,134
+                 M 504,126 L 504,134"
+              fill="none"
+              stroke="rgba(242,235,217,0.3)"
+              strokeWidth="1"
+              style={{ strokeDasharray: 50, strokeDashoffset: 50 }}
+            />
+          </svg>
+
+          <h1
+            className="hero-word"
+            style={{
+              fontFamily: "var(--font-condensed)",
+              fontWeight: 800,
+              fontSize: "clamp(72px, 18vw, 210px)",
+              color: "#F2EBD9",
+              lineHeight: 0.88,
+              letterSpacing: "-0.01em",
+              textTransform: "uppercase",
+              animationDelay: "0.1s",
+              opacity: 0.92,
+            }}
+          >
+            TATTOOS
+          </h1>
+
+          <h2
+            className="hero-word"
+            style={{
+              fontFamily: "var(--font-condensed)",
+              fontWeight: 700,
+              fontSize: "clamp(30px, 7vw, 90px)",
+              color: "#F2EBD9",
+              lineHeight: 1.0,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              animationDelay: "0.25s",
+              opacity: 0.88,
+            }}
+          >
+            BY JESS
+          </h2>
+        </div>
 
         {/* Thin rule */}
         <div
@@ -74,7 +125,7 @@ export default function Hero() {
             width: "56px",
             height: "1.5px",
             background: "#A63324",
-            margin: "20px auto 0",
+            margin: "16px auto 0",
             animationDelay: "0.45s",
           }}
         />

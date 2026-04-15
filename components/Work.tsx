@@ -3,12 +3,12 @@ import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 const tiles = [
-  { label: "Fine Line Florals",  sub: "Custom", bg: "#A63324", size: "large",  img: "/portfolio/IMG_0032.jpg"  },
-  { label: "Geometric",          sub: "Custom", bg: "#3C2A18", size: "small",  img: "/portfolio/IMG_1132.jpg"  },
-  { label: "Script & Lettering", sub: "Custom", bg: "#1A1410", size: "small",  img: "/portfolio/IMG_1290.jpg"  },
-  { label: "Blackwork",          sub: "Flash",  bg: "#2C1A0E", size: "medium", img: "/portfolio/IMG_0743.jpg"  },
-  { label: "Botanicals",         sub: "Flash",  bg: "#5C1515", size: "medium", img: "/portfolio/IMG_1742.jpg"  },
-  { label: "Micro Realism",      sub: "Custom", bg: "#7A1515", size: "large",  img: "/portfolio/948ab1d0-5226-4099-9599-e868ce366ea3.jpg" },
+  { label: "Fine Line Florals",  sub: "Custom", bg: "#A63324", img: "/portfolio/IMG_0032.jpg"  },
+  { label: "Geometric",          sub: "Custom", bg: "#3C2A18", img: "/portfolio/IMG_1132.jpg"  },
+  { label: "Script & Lettering", sub: "Custom", bg: "#1A1410", img: "/portfolio/IMG_1290.jpg"  },
+  { label: "Blackwork",          sub: "Flash",  bg: "#2C1A0E", img: "/portfolio/IMG_0743.jpg"  },
+  { label: "Botanicals",         sub: "Flash",  bg: "#5C1515", img: "/portfolio/IMG_1742.jpg"  },
+  { label: "Micro Realism",      sub: "Custom", bg: "#7A1515", img: "/portfolio/948ab1d0-5226-4099-9599-e868ce366ea3.jpg" },
 ];
 
 export default function Work() {
@@ -63,9 +63,7 @@ export default function Work() {
             <ScrollReveal key={tile.label} delay={i * 0.06}>
               <div
                 className="work-tile group cursor-none"
-                style={{
-                  aspectRatio: tile.size === "large" ? "3/4" : tile.size === "medium" ? "4/5" : "1/1",
-                }}
+                style={{ aspectRatio: "3/4" }}
               >
                 <div
                   className="img-hover w-full h-full relative"
