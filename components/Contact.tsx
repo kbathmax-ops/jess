@@ -37,12 +37,12 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="grain relative py-20 md:py-28 px-5 md:px-10 lg:px-14"
+      className="grain relative py-16 md:py-[90px] px-5 md:px-10 lg:px-14"
       style={{ background: "#1A1410" }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="mb-14 md:mb-18">
+        <div className="mb-11 md:mb-[58px]">
           <ScrollReveal>
             <p
               className="mb-3"
@@ -54,16 +54,17 @@ export default function Contact() {
                 color: "rgba(242,235,217,0.3)",
               }}
             >
-              (05) — Contact
+              (04) — Contact
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
             <h2
               className="leading-none"
               style={{
-                fontFamily: "var(--font-bebas)",
-                fontSize: "clamp(58px, 13vw, 160px)",
-                letterSpacing: "0.01em",
+                fontFamily: "var(--font-host-grotesk)",
+                fontWeight: 800,
+                fontSize: "clamp(52px, 13vw, 160px)",
+                letterSpacing: "-0.02em",
                 color: "#F2EBD9",
                 lineHeight: 0.9,
               }}
@@ -75,10 +76,10 @@ export default function Contact() {
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-11 lg:gap-16">
           {/* Contact form */}
           <ScrollReveal delay={0.1}>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-7">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               {/* Name */}
               <div>
                 <label
@@ -196,10 +197,11 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full py-4 tracking-widest uppercase transition-opacity duration-200 cursor-none hover:opacity-80"
+                className="w-full py-4 uppercase transition-opacity duration-200 cursor-none hover:opacity-80"
                 style={{
-                  fontFamily: "var(--font-bebas)",
-                  fontSize: "16px",
+                  fontFamily: "var(--font-host-grotesk)",
+                  fontWeight: 700,
+                  fontSize: "12px",
                   letterSpacing: "0.2em",
                   background: status === "sent" ? "#2C1A0E" : "#A63324",
                   color: "#F2EBD9",
@@ -230,14 +232,14 @@ export default function Contact() {
           </ScrollReveal>
 
           {/* Right: Instagram + info */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
             {/* Instagram card */}
             <ScrollReveal direction="right" delay={0.14}>
               <a
                 href={`https://ig.me/m/${INSTAGRAM_HANDLE}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-6 group cursor-none transition-all duration-300"
+                className="block p-5 group cursor-none transition-all duration-300"
                 style={{
                   border: "1px solid rgba(242,235,217,0.12)",
                   textDecoration: "none",
@@ -279,10 +281,11 @@ export default function Contact() {
                     </p>
                     <p
                       style={{
-                        fontFamily: "var(--font-bebas)",
-                        fontSize: "24px",
+                        fontFamily: "var(--font-host-grotesk)",
+                        fontWeight: 700,
+                        fontSize: "22px",
                         color: "#F2EBD9",
-                        letterSpacing: "0.04em",
+                        letterSpacing: "0.02em",
                       }}
                     >
                       DM on Instagram
@@ -322,7 +325,7 @@ export default function Contact() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="flex justify-between items-center py-4"
+                    className="flex justify-between items-center py-3"
                     style={{ borderBottom: "1px solid rgba(242,235,217,0.07)" }}
                   >
                     <span
@@ -338,11 +341,11 @@ export default function Contact() {
                     </span>
                     <span
                       style={{
-                        fontFamily: "var(--font-oswald)",
-                        fontSize: "17px",
+                        fontFamily: "var(--font-host-grotesk)",
+                        fontSize: "16px",
                         fontWeight: 600,
                         color: "#F2EBD9",
-                        letterSpacing: "0.02em",
+                        letterSpacing: "0.01em",
                       }}
                     >
                       {item.value}
@@ -355,7 +358,7 @@ export default function Contact() {
             {/* Availability */}
             <ScrollReveal direction="right" delay={0.3}>
               <div
-                className="flex items-center gap-3 px-5 py-4"
+                className="flex items-center gap-3 px-4 py-3"
                 style={{ background: "rgba(166,51,36,0.1)", border: "1px solid rgba(166,51,36,0.25)" }}
               >
                 <div

@@ -4,14 +4,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-20 md:py-28 px-5 md:px-10 lg:px-14"
+      className="relative py-16 md:py-[90px] px-5 md:px-10 lg:px-14"
       style={{ background: "#F2EBD9" }}
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Section index */}
+      <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <p
-            className="mb-10 md:mb-14"
+            className="mb-8 md:mb-11"
             style={{
               fontFamily: "var(--font-space-mono)",
               fontSize: "9px",
@@ -24,40 +23,32 @@ export default function About() {
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
-          {/* Photo block — editorial placement, no ornament border */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[51px] items-start">
+          {/* Photo placeholder */}
           <ScrollReveal direction="left">
             <div className="relative">
-              {/* Cutout-style photo placeholder — no border frame */}
               <div
                 className="w-full overflow-hidden"
                 style={{
                   aspectRatio: "3/4",
-                  background: "linear-gradient(160deg, #2C1A0E 0%, #5C1515 45%, #A63324 80%, #E0C9A0 100%)",
-                  filter: "sepia(15%) contrast(1.12)",
+                  background: "#2C1A0E",
                 }}
               >
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-1/3"
-                  style={{ background: "linear-gradient(to top, #1A1410, transparent)" }}
-                />
                 <div
                   className="absolute bottom-5 left-5"
                   style={{
                     fontFamily: "var(--font-space-mono)",
                     fontSize: "9px",
                     letterSpacing: "0.2em",
-                    color: "rgba(242,235,217,0.5)",
+                    color: "rgba(242,235,217,0.4)",
                     textTransform: "uppercase",
                   }}
                 >
                   Jess — South Florida
                 </div>
               </div>
-
-              {/* Floating label — editorial caption style */}
               <p
-                className="mt-3"
+                className="mt-2"
                 style={{
                   fontFamily: "var(--font-space-mono)",
                   fontSize: "9px",
@@ -72,18 +63,18 @@ export default function About() {
           </ScrollReveal>
 
           {/* Text block */}
-          <div className="flex flex-col gap-7 md:pt-4">
+          <div className="flex flex-col gap-[22px] md:pt-3">
             <ScrollReveal direction="right" delay={0.1}>
               <h2
                 className="leading-tight"
                 style={{
-                  fontFamily: "var(--font-oswald)",
-                  fontSize: "clamp(38px, 5.5vw, 68px)",
-                  fontWeight: 700,
+                  fontFamily: "var(--font-host-grotesk)",
+                  fontSize: "clamp(34px, 5.5vw, 64px)",
+                  fontWeight: 800,
                   textTransform: "uppercase",
-                  letterSpacing: "0.02em",
+                  letterSpacing: "-0.01em",
                   color: "#1A1410",
-                  lineHeight: 1.05,
+                  lineHeight: 1.0,
                 }}
               >
                 Art that lives
@@ -106,7 +97,7 @@ export default function About() {
                   fontSize: "15px",
                   color: "rgba(26,20,16,0.68)",
                   lineHeight: "1.75",
-                  fontWeight: 700,
+                  fontWeight: 500,
                 }}
               >
                 I specialize in fine line and custom tattoo work — designs built around
@@ -122,7 +113,7 @@ export default function About() {
                   fontSize: "15px",
                   color: "rgba(26,20,16,0.68)",
                   lineHeight: "1.75",
-                  fontWeight: 700,
+                  fontWeight: 500,
                 }}
               >
                 Based in South Florida, I work out of a private studio and travel for
@@ -130,9 +121,9 @@ export default function About() {
               </p>
             </ScrollReveal>
 
-            {/* Stats — editorial, no color blocks */}
+            {/* Stats */}
             <ScrollReveal direction="right" delay={0.38}>
-              <div className="flex gap-10 pt-2">
+              <div className="flex gap-8 pt-1">
                 {[
                   { num: "200+", label: "Tattoos" },
                   { num: "3+", label: "Years" },
@@ -141,8 +132,9 @@ export default function About() {
                   <div key={stat.label}>
                     <p
                       style={{
-                        fontFamily: "var(--font-bebas)",
-                        fontSize: "44px",
+                        fontFamily: "var(--font-host-grotesk)",
+                        fontWeight: 800,
+                        fontSize: "40px",
                         color: "#A63324",
                         lineHeight: 1,
                       }}

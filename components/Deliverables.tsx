@@ -15,12 +15,12 @@ export default function Deliverables() {
   return (
     <section
       id="deliverables"
-      className="relative py-20 md:py-28 px-5 md:px-10 lg:px-14"
+      className="relative py-16 md:py-[90px] px-5 md:px-10 lg:px-14"
       style={{ background: "#F2EBD9" }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="flex items-end justify-between mb-14 md:mb-18 flex-wrap gap-4">
+        <div className="flex items-end justify-between mb-11 md:mb-[58px] flex-wrap gap-4">
           <div>
             <ScrollReveal>
               <p
@@ -33,16 +33,17 @@ export default function Deliverables() {
                   color: "rgba(26,20,16,0.35)",
                 }}
               >
-                (04) — Services
+                (03) — Services
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.08}>
               <h2
                 className="leading-none"
                 style={{
-                  fontFamily: "var(--font-bebas)",
-                  fontSize: "clamp(56px, 11vw, 130px)",
-                  letterSpacing: "0.01em",
+                  fontFamily: "var(--font-host-grotesk)",
+                  fontWeight: 800,
+                  fontSize: "clamp(50px, 11vw, 130px)",
+                  letterSpacing: "-0.02em",
                   color: "#1A1410",
                   lineHeight: 0.9,
                 }}
@@ -53,14 +54,14 @@ export default function Deliverables() {
           </div>
         </div>
 
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
-          {/* Service list — takes 3 cols */}
+        {/* Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-[51px] items-start">
+          {/* Service list */}
           <div className="lg:col-span-3 flex flex-col">
             {services.map((s, i) => (
               <ScrollReveal key={s.num} delay={i * 0.06}>
                 <div
-                  className="deliverable-item py-6 border-b"
+                  className="deliverable-item py-5 border-b"
                   style={{ borderColor: "rgba(26,20,16,0.08)" }}
                 >
                   <div className="flex items-baseline gap-4 mb-1.5">
@@ -70,17 +71,18 @@ export default function Deliverables() {
                         fontSize: "9px",
                         letterSpacing: "0.2em",
                         color: "#A63324",
+                        flexShrink: 0,
                       }}
                     >
                       {s.num}
                     </span>
                     <h3
                       style={{
-                        fontFamily: "var(--font-oswald)",
-                        fontSize: "clamp(20px, 2.8vw, 30px)",
+                        fontFamily: "var(--font-host-grotesk)",
+                        fontSize: "clamp(18px, 2.8vw, 28px)",
                         fontWeight: 700,
                         textTransform: "uppercase",
-                        letterSpacing: "0.03em",
+                        letterSpacing: "0.01em",
                         color: "#1A1410",
                       }}
                     >
@@ -91,9 +93,9 @@ export default function Deliverables() {
                     style={{
                       fontFamily: "var(--font-host-grotesk)",
                       fontSize: "13px",
+                      fontWeight: 500,
                       color: "rgba(26,20,16,0.6)",
                       lineHeight: "1.7",
-                      fontWeight: 700,
                       paddingLeft: "clamp(24px, 3vw, 40px)",
                     }}
                   >
@@ -104,12 +106,11 @@ export default function Deliverables() {
             ))}
           </div>
 
-          {/* Pricing panel — takes 2 cols */}
+          {/* Pricing panel */}
           <ScrollReveal direction="right" delay={0.18} className="lg:col-span-2">
-            <div className="sticky top-28">
-              {/* Rate block — editorial, no gradient card */}
+            <div className="sticky top-24">
               <div
-                className="p-8 md:p-10"
+                className="p-6 md:p-8"
                 style={{ background: "#1A1410" }}
               >
                 <p
@@ -125,27 +126,28 @@ export default function Deliverables() {
                   Starting at
                 </p>
                 <p
-                  className="leading-none mb-5"
+                  className="leading-none mb-4"
                   style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: "clamp(72px, 10vw, 100px)",
+                    fontFamily: "var(--font-host-grotesk)",
+                    fontWeight: 800,
+                    fontSize: "clamp(64px, 10vw, 100px)",
                     color: "#F2EBD9",
+                    letterSpacing: "-0.02em",
                   }}
                 >
                   $150
                 </p>
                 <div
-                  className="mb-5"
+                  className="mb-4"
                   style={{ height: "1px", background: "rgba(242,235,217,0.1)" }}
                 />
                 <p
                   style={{
-                    fontFamily: "var(--font-oswald)",
-                    fontSize: "17px",
+                    fontFamily: "var(--font-host-grotesk)",
+                    fontSize: "15px",
                     fontWeight: 500,
                     color: "rgba(242,235,217,0.75)",
                     lineHeight: "1.55",
-                    letterSpacing: "0.01em",
                   }}
                 >
                   Every piece is priced by size, placement, and complexity.
@@ -155,11 +157,13 @@ export default function Deliverables() {
                   onClick={() => {
                     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="cursor-none mt-7 w-full py-3 transition-opacity duration-200 hover:opacity-75"
+                  className="cursor-none mt-6 w-full py-3 transition-opacity duration-200 hover:opacity-75"
                   style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: "13px",
+                    fontFamily: "var(--font-host-grotesk)",
+                    fontWeight: 700,
+                    fontSize: "11px",
                     letterSpacing: "0.18em",
+                    textTransform: "uppercase",
                     background: "#A63324",
                     color: "#F2EBD9",
                     border: "none",
@@ -170,7 +174,7 @@ export default function Deliverables() {
               </div>
 
               <p
-                className="mt-3"
+                className="mt-2"
                 style={{
                   fontFamily: "var(--font-space-mono)",
                   fontSize: "9px",

@@ -1,33 +1,7 @@
 import type { Metadata } from "next";
-import {
-  Anton,
-  Bebas_Neue,
-  Oswald,
-  Space_Mono,
-} from "next/font/google";
+import { Space_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-
-const anton = Anton({
-  variable: "--font-anton",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
-const bebas = Bebas_Neue({
-  variable: "--font-bebas",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
-const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  display: "swap",
-});
 
 const spaceMono = Space_Mono({
   variable: "--font-space-mono",
@@ -69,7 +43,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${anton.variable} ${bebas.variable} ${oswald.variable} ${spaceMono.variable} ${hostGrotesk.variable}`}
+      className={`${spaceMono.variable} ${hostGrotesk.variable}`}
     >
       <body className="min-h-screen antialiased">{children}</body>
     </html>

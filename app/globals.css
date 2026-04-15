@@ -9,11 +9,11 @@
   --color-bark: #2C1A0E;
   --color-gold: #C8A96E;
 
-  --font-display: 'Anton', sans-serif;
-  --font-headline: 'Bebas Neue', sans-serif;
-  --font-body: var(--font-host-grotesk), 'Host Grotesk', sans-serif;
+  --font-display: var(--font-host-grotesk), sans-serif;
+  --font-headline: var(--font-host-grotesk), sans-serif;
+  --font-body: var(--font-host-grotesk), sans-serif;
   --font-mono: 'Space Mono', monospace;
-  --font-oswald: 'Oswald', sans-serif;
+  --font-oswald: var(--font-host-grotesk), sans-serif;
 }
 
 * {
@@ -59,6 +59,8 @@ body {
 @media (max-width: 768px) {
   body { cursor: auto; }
   .cursor-dot, .cursor-ring { display: none; }
+  .field-input { font-size: 16px; } /* prevent iOS zoom on focus */
+  button, a { cursor: auto; }
 }
 
 /* ─── Grain overlay ─── */

@@ -1,22 +1,24 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer
-      className="py-10 px-5 md:px-10 lg:px-14 border-t"
+      className="py-8 px-5 md:px-10 lg:px-14 border-t"
       style={{ background: "#1A1410", borderColor: "rgba(242,235,217,0.07)" }}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
           {/* Wordmark */}
           <div>
             <p
               style={{
-                fontFamily: "var(--font-oswald)",
+                fontFamily: "var(--font-host-grotesk)",
                 fontWeight: 700,
-                fontSize: "22px",
+                fontSize: "20px",
                 textTransform: "uppercase",
                 letterSpacing: "0.06em",
                 color: "#F2EBD9",
@@ -39,13 +41,17 @@ export default function Footer() {
           </div>
 
           {/* Nav links */}
-          <div className="flex gap-7 justify-start md:justify-center flex-wrap">
-            {["About", "Work", "Calendar", "Contact"].map((label) => (
+          <div className="flex gap-6 justify-start md:justify-center flex-wrap">
+            {[
+              { label: "About", id: "about" },
+              { label: "Work", id: "work" },
+              { label: "Contact", id: "contact" },
+            ].map(({ label, id }) => (
               <button
                 key={label}
                 onClick={() => {
                   document
-                    .querySelector(`#${label.toLowerCase()}`)
+                    .querySelector(`#${id}`)
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="cursor-none bg-transparent border-none transition-colors duration-200"
@@ -62,6 +68,22 @@ export default function Footer() {
                 {label}
               </button>
             ))}
+            <Link
+              href="/portfolio"
+              className="cursor-none transition-colors duration-200"
+              style={{
+                fontFamily: "var(--font-space-mono)",
+                fontSize: "8px",
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "rgba(242,235,217,0.3)",
+                textDecoration: "none",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#A63324")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(242,235,217,0.3)")}
+            >
+              Portfolio
+            </Link>
           </div>
 
           {/* Socials + copyright */}
