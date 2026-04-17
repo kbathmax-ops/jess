@@ -3,8 +3,98 @@
 import { useState, FormEvent } from "react";
 import ScrollReveal from "./ScrollReveal";
 
+const TIME_SLOTS: string[] = [];
+for (let h = 10; h <= 17; h++) {
+  for (let m = 0; m < 60; m += 15) {
+    if (h === 17 && m > 0) break;
+    const hour = h > 12 ? h - 12 : h;
+    const ampm = h >= 12 ? "PM" : "AM";
+    TIME_SLOTS.push(`${hour}:${m.toString().padStart(2, "0")} ${ampm}`);
+  }
+}
+
+const DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function Calendar({ selected, onSelect }: { selected: string; onSelect: (d: string) => void }) {
+  const today = new Date();
+  const [viewYear, setViewYear] = useState(today.getFullYear());
+  const [viewMonth, setViewMonth] = useState(today.getMonth());
+
+  const firstDay = new Date(viewYear, viewMonth, 1).getDay();
+  const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+
+  const prev = () => {
+    if (viewMonth === 0) { setViewMonth(11); setViewYear(y => y - 1); }
+    else setViewMonth(m => m - 1);
+  };
+  const next = () => {
+    if (viewMonth === 11) { setViewMonth(0); setViewYear(y => y + 1); }
+    else setViewMonth(m => m + 1);
+  };
+
+  const cells: (number | null)[] = [...Array(firstDay).fill(null), ...Array.from({ length: daysInMonth }, (_, i) => i + 1)];
+
+  return (
+    <div style={{ width: "100%" }}>
+      {/* Month nav */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+        <button type="button" onClick={prev} style={{ background: "none", border: "none", color: "rgba(242,235,217,0.5)", fontSize: "18px", cursor: "pointer", padding: "4px 8px" }}>‹</button>
+        <span style={{ fontFamily: "var(--font-host-grotesk)", fontWeight: 600, fontSize: "14px", color: "#F2EBD9", letterSpacing: "0.08em" }}>
+          {MONTHS[viewMonth]} {viewYear}
+        </span>
+        <button type="button" onClick={next} style={{ background: "none", border: "none", color: "rgba(242,235,217,0.5)", fontSize: "18px", cursor: "pointer", padding: "4px 8px" }}>›</button>
+      </div>
+
+      {/* Day headers */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "2px", marginBottom: "4px" }}>
+        {DAYS.map(d => (
+          <div key={d} style={{ textAlign: "center", fontFamily: "var(--font-host-grotesk)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.08em", color: "rgba(242,235,217,0.3)", padding: "4px 0" }}>{d}</div>
+        ))}
+      </div>
+
+      {/* Date cells */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "2px" }}>
+        {cells.map((day, i) => {
+          if (!day) return <div key={`e-${i}`} />;
+          const dateStr = `${viewYear}-${String(viewMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+          const isPast = new Date(viewYear, viewMonth, day) < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+          const isSelected = selected === dateStr;
+          return (
+            <button
+              key={dateStr}
+              type="button"
+              disabled={isPast}
+              onClick={() => onSelect(isSelected ? "" : dateStr)}
+              style={{
+                padding: "7px 2px",
+                textAlign: "center",
+                fontFamily: "var(--font-host-grotesk)",
+                fontSize: "13px",
+                fontWeight: isSelected ? 700 : 500,
+                background: isSelected ? "#A63324" : "transparent",
+                color: isPast ? "rgba(242,235,217,0.15)" : isSelected ? "#F2EBD9" : "rgba(242,235,217,0.75)",
+                border: isSelected ? "none" : "1px solid transparent",
+                cursor: isPast ? "default" : "pointer",
+                borderRadius: "2px",
+                transition: "background 0.15s, color 0.15s",
+              }}
+              onMouseEnter={e => { if (!isPast && !isSelected) (e.currentTarget as HTMLButtonElement).style.background = "rgba(166,51,36,0.2)"; }}
+              onMouseLeave={e => { if (!isPast && !isSelected) (e.currentTarget as HTMLButtonElement).style.background = "transparent"; }}
+            >
+              {day}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -18,11 +108,13 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, availability: selectedDate && selectedTime ? `${selectedDate} at ${selectedTime}` : selectedDate || selectedTime || "Not specified" }),
       });
       if (res.ok) {
         setStatus("sent");
         setForm({ name: "", email: "", subject: "", message: "" });
+        setSelectedDate("");
+        setSelectedTime("");
       } else {
         setStatus("error");
       }
@@ -191,6 +283,59 @@ export default function Contact() {
                   className="field-input resize-none"
                   placeholder="Design idea, size (cm or inches), placement, reference images..."
                 />
+              </div>
+
+              {/* Availability */}
+              <div>
+                <label style={{ display: "block", fontFamily: "var(--font-host-grotesk)", fontWeight: 600, fontSize: "12px", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(242,235,217,0.4)", marginBottom: "16px" }}>
+                  When are you available?
+                </label>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
+                  {/* Calendar */}
+                  <div style={{ background: "rgba(242,235,217,0.04)", border: "1px solid rgba(242,235,217,0.1)", padding: "16px" }}>
+                    <Calendar selected={selectedDate} onSelect={setSelectedDate} />
+                    {selectedDate && (
+                      <p style={{ fontFamily: "var(--font-host-grotesk)", fontSize: "12px", color: "#A63324", marginTop: "10px", textAlign: "center", fontWeight: 600 }}>
+                        {new Date(selectedDate + "T12:00:00").toLocaleDateString("en-CA", { weekday: "long", month: "long", day: "numeric" })}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Time slots */}
+                  <div style={{ background: "rgba(242,235,217,0.04)", border: "1px solid rgba(242,235,217,0.1)", padding: "16px", overflowY: "auto", maxHeight: "280px" }}>
+                    <p style={{ fontFamily: "var(--font-host-grotesk)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "rgba(242,235,217,0.3)", marginBottom: "10px", textTransform: "uppercase" }}>Select a time</p>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px" }}>
+                      {TIME_SLOTS.map(slot => {
+                        const isSelected = selectedTime === slot;
+                        return (
+                          <button
+                            key={slot}
+                            type="button"
+                            onClick={() => setSelectedTime(isSelected ? "" : slot)}
+                            style={{
+                              padding: "7px 4px",
+                              fontFamily: "var(--font-host-grotesk)",
+                              fontSize: "12px",
+                              fontWeight: isSelected ? 700 : 500,
+                              background: isSelected ? "#A63324" : "transparent",
+                              color: isSelected ? "#F2EBD9" : "rgba(242,235,217,0.6)",
+                              border: "1px solid",
+                              borderColor: isSelected ? "#A63324" : "rgba(242,235,217,0.1)",
+                              cursor: "pointer",
+                              borderRadius: "2px",
+                              transition: "all 0.15s",
+                              textAlign: "center",
+                            }}
+                            onMouseEnter={e => { if (!isSelected) (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(166,51,36,0.5)"; }}
+                            onMouseLeave={e => { if (!isSelected) (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(242,235,217,0.1)"; }}
+                          >
+                            {slot}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <button

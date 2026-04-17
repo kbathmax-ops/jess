@@ -3,7 +3,7 @@ import { Resend } from "resend";
 
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const { name, email, subject, message } = await req.json();
+  const { name, email, subject, message, availability } = await req.json();
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -22,6 +22,7 @@ export async function POST(req: NextRequest) {
             <tr><td style="padding:8px 0;color:rgba(242,235,217,0.5);width:100px">Name</td><td style="padding:8px 0">${name}</td></tr>
             <tr><td style="padding:8px 0;color:rgba(242,235,217,0.5)">Email</td><td style="padding:8px 0"><a href="mailto:${email}" style="color:#A63324">${email}</a></td></tr>
             <tr><td style="padding:8px 0;color:rgba(242,235,217,0.5)">Subject</td><td style="padding:8px 0">${subject || "—"}</td></tr>
+            <tr><td style="padding:8px 0;color:rgba(242,235,217,0.5)">Availability</td><td style="padding:8px 0">${availability || "—"}</td></tr>
           </table>
           <hr style="border:none;border-top:1px solid rgba(242,235,217,0.1);margin:20px 0"/>
           <p style="white-space:pre-wrap;line-height:1.7;margin:0">${message}</p>
