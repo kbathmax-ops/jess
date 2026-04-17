@@ -38,6 +38,10 @@ const images = [
   "IMG_2979.jpg",
   "IMG_3221.jpg",
   "IMG_9923.jpg",
+  "IMG_9583_new.jpg",
+  "64D7C61B-5E06-4498-BD48-B263F3FDDA0B.JPG",
+  "48BF8682-D664-4114-8C95-2ED1602F4589.jpg",
+  "CD1F8CE3-B4C8-4482-A7DF-75AE948A20ED.JPG",
 ];
 
 export default function Portfolio() {
