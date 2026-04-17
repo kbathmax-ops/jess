@@ -6,9 +6,9 @@ const tiles = [
   { label: "Fine Line Florals",  sub: "Custom", bg: "#A63324", img: "/portfolio/IMG_0032.jpg"  },
   { label: "Geometric",          sub: "Custom", bg: "#3C2A18", img: "/portfolio/IMG_1132.jpg"  },
   { label: "Script & Lettering", sub: "Custom", bg: "#1A1410", img: "/portfolio/IMG_1290.jpg"  },
-  { label: "Blackwork",          sub: "Flash",  bg: "#2C1A0E", img: "/portfolio/IMG_0743.jpg"  },
-  { label: "Botanicals",         sub: "Flash",  bg: "#5C1515", img: "/portfolio/IMG_1742.jpg"  },
-  { label: "Micro Realism",      sub: "Custom", bg: "#7A1515", img: "/portfolio/948ab1d0-5226-4099-9599-e868ce366ea3.jpg" },
+  { label: "Blackwork",          sub: "Flash",  bg: "#2C1A0E", img: "/portfolio/IMG_2238.jpg"  },
+  { label: "Botanicals",         sub: "Flash",  bg: "#5C1515", img: "/portfolio/IMG_1020.jpg"  },
+  { label: "Micro Realism",      sub: "Custom", bg: "#7A1515", img: "/portfolio/B872EA30-7ECB-41C8-9536-00711CA698FF.JPG" },
 ];
 
 export default function Work() {
