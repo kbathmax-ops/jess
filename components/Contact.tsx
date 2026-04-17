@@ -3,8 +3,6 @@
 import { useState, FormEvent } from "react";
 import ScrollReveal from "./ScrollReveal";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id"; // ← update this
-
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -17,9 +15,9 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
       if (res.ok) {
