@@ -11,11 +11,17 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[51px] items-start">
           {/* Photo placeholder */}
           <ScrollReveal direction="left">
-            <div className="relative">
+            <div className="relative mx-auto" style={{ maxWidth: "340px" }}>
               <div
-                className="w-full overflow-hidden"
+                className="w-full overflow-hidden relative"
                 style={{ aspectRatio: "3/4", background: "#2C1A0E" }}
               >
+                <img
+                  src="/jess-portrait.jpg"
+                  alt="Jess — Toronto, Ontario"
+                  className="w-full h-full object-cover object-top"
+                  style={{ display: "block" }}
+                />
                 <div
                   className="absolute bottom-5 left-5"
                   style={{
