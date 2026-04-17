@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "Tattoos by Jess <bookings@tattoosbyjess.com>",
       to: "jessicawang@tattoosbyjess.com",
       replyTo: email,
@@ -28,6 +28,11 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
+
+    if (error) {
+      console.error("Resend error:", error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
