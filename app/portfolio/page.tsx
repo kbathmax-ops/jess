@@ -1,32 +1,75 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Cursor from "@/components/Cursor";
 
 const images = [
-  "IMG_0032.jpg","IMG_0045.jpg","IMG_0174.jpg","IMG_0192.jpg",
-  "IMG_0278.jpg","IMG_0280.jpg","IMG_0451.jpg","IMG_0458.jpg",
-  "IMG_0507.jpg","IMG_0510.jpg","IMG_0743.jpg","IMG_0859.jpg",
-  "IMG_0957.jpg","IMG_1132.jpg","IMG_1226.jpg","IMG_1290.jpg",
-  "IMG_1319.jpg","IMG_1323.jpg","IMG_1390.jpg","IMG_1454.jpg",
-  "IMG_1474.jpg","IMG_1476.jpg","IMG_1577.jpg","IMG_1624.jpg",
-  "IMG_1625.jpg","IMG_1636.jpg","IMG_1649.jpg","IMG_1657.jpg",
-  "IMG_1742.jpg","IMG_1745.jpg","IMG_1753.jpg","IMG_1754.jpg",
-  "IMG_1847.jpg","IMG_1852.jpg","IMG_1858.jpg","IMG_1863.jpg",
-  "IMG_1864.jpg","IMG_8657.jpg","IMG_9117.jpg","IMG_9130.jpg",
-  "IMG_9133.jpg","IMG_9421.jpg","IMG_9474.jpg","IMG_9583.jpg",
-  "IMG_9585.jpg","IMG_9775-preview.jpg","IMG_9894.jpg",
-  "48bf8682-d664-4114-8c95-2ed1602f4589.jpg",
-  "64d7c61b-5e06-4498-bd48-b263f3fdda0b.jpg",
-  "6c58358c-72eb-4d02-8aa6-1acf48676f76.jpg",
-  "822f38bb-71ba-41cf-ab5a-5ee35a5c0a10.jpg",
-  "9119bbdb-7f2d-443e-8da3-9212437d9c98.jpg",
-  "948ab1d0-5226-4099-9599-e868ce366ea3.jpg",
-  "a2962f92-0ccc-493e-baf3-4988bf7e857b.jpg",
-  "img_5006.jpg",
-  "img_2189.png",
+  "26C9A50D-4F7A-4963-9F0D-B16C3BB59257.JPG",
+  "2E2F768A-D89E-4474-A0B3-1E627ADF80AC.JPG",
+  "33C6C56F-58B4-4D21-A508-01CCECC6FA4B.JPG",
+  "B27D11DA-512B-4902-9B61-71CE87DD5392.JPG",
+  "B872EA30-7ECB-41C8-9536-00711CA698FF.JPG",
+  "D3084AF5-F1B8-4123-82A4-6171B913DFE2.JPG",
+  "FB244FAB-7C3A-440B-B596-F5A20027D165.JPG",
+  "IMG_0033.jpg",
+  "IMG_0174.jpg",
+  "IMG_0278.jpg",
+  "IMG_0415.jpg",
+  "IMG_0864.jpg",
+  "IMG_0953.jpg",
+  "IMG_1020.jpg",
+  "IMG_1286.jpg",
+  "IMG_1307.jpg",
+  "IMG_1390.jpg",
+  "IMG_1443.jpg",
+  "IMG_1448.jpg",
+  "IMG_1637.jpg",
+  "IMG_1925.JPG",
+  "IMG_1946.jpg",
+  "IMG_2165.jpg",
+  "IMG_2195.jpg",
+  "IMG_2215.jpg",
+  "IMG_2238.jpg",
+  "IMG_2866.jpg",
+  "IMG_2899.jpg",
+  "IMG_2950.jpg",
+  "IMG_2979.jpg",
+  "IMG_3221.jpg",
+  "IMG_9923.jpg",
 ];
 
 export default function Portfolio() {
+  const [lightbox, setLightbox] = useState<number | null>(null);
+
+  const close = useCallback(() => setLightbox(null), []);
+
+  const prev = useCallback(() =>
+    setLightbox((i) => (i === null ? null : (i - 1 + images.length) % images.length)),
+    []
+  );
+
+  const next = useCallback(() =>
+    setLightbox((i) => (i === null ? null : (i + 1) % images.length)),
+    []
+  );
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightbox, close, prev, next]);
+
   return (
     <>
       <Cursor />
@@ -111,25 +154,17 @@ export default function Portfolio() {
         </div>
 
         {/* Masonry grid */}
-        <div
-          className="px-5 md:px-10 lg:px-14 pb-16"
-          style={{
-            columns: "2",
-            columnGap: "8px",
-          }}
-          // responsive columns via inline style since Tailwind columns classes may not cover all breakpoints
-        >
+        <div className="px-5 md:px-10 lg:px-14 pb-16">
           <style>{`
-            @media (min-width: 640px)  { .portfolio-grid { columns: 3 !important; } }
-            @media (min-width: 1024px) { .portfolio-grid { columns: 4 !important; } }
+            .portfolio-grid { columns: 2; column-gap: 8px; }
+            @media (min-width: 640px)  { .portfolio-grid { columns: 3; } }
+            @media (min-width: 1024px) { .portfolio-grid { columns: 4; } }
           `}</style>
-          <div
-            className="portfolio-grid"
-            style={{ columns: 2, columnGap: "8px" }}
-          >
+          <div className="portfolio-grid">
             {images.map((src, i) => (
-              <div
+              <button
                 key={src}
+                onClick={() => setLightbox(i)}
                 className="group cursor-none"
                 style={{
                   breakInside: "avoid",
@@ -137,10 +172,14 @@ export default function Portfolio() {
                   position: "relative",
                   overflow: "hidden",
                   display: "block",
+                  width: "100%",
+                  padding: 0,
+                  border: "none",
+                  background: "none",
                 }}
               >
                 <Image
-                  src={`/portfolio/${src}`}
+                  src={`/work2/${src}`}
                   alt={`Tattoo by Jess — piece ${i + 1}`}
                   width={600}
                   height={800}
@@ -149,13 +188,20 @@ export default function Portfolio() {
                     height: "auto",
                     display: "block",
                     filter: "sepia(10%) contrast(1.05) brightness(0.95)",
-                    transition: "filter 0.4s ease, transform 0.4s ease",
+                    transition: "filter 0.4s cubic-bezier(0.32,0.72,0,1), transform 0.4s cubic-bezier(0.32,0.72,0,1)",
                   }}
-                  className="group-hover:brightness-100 group-hover:sepia-0"
+                  className="group-hover:scale-[1.03]"
                   loading={i < 8 ? "eager" : "lazy"}
                   quality={80}
                 />
-              </div>
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100"
+                  style={{
+                    background: "rgba(26,20,16,0.25)",
+                    transition: "opacity 0.3s ease",
+                  }}
+                />
+              </button>
             ))}
           </div>
         </div>
@@ -215,6 +261,116 @@ export default function Portfolio() {
           </div>
         </div>
       </main>
+
+      {/* Lightbox */}
+      {lightbox !== null && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center"
+          style={{ background: "rgba(10,7,5,0.96)", backdropFilter: "blur(8px)" }}
+          onClick={close}
+        >
+          {/* Close */}
+          <button
+            onClick={close}
+            className="absolute top-5 right-5 z-10 flex items-center justify-center"
+            style={{
+              width: "44px",
+              height: "44px",
+              borderRadius: "50%",
+              background: "rgba(242,235,217,0.08)",
+              border: "1px solid rgba(242,235,217,0.15)",
+              color: "#F2EBD9",
+              fontSize: "20px",
+              cursor: "pointer",
+              transition: "background 0.2s ease",
+            }}
+          >
+            ×
+          </button>
+
+          {/* Counter */}
+          <div
+            className="absolute top-5 left-1/2 -translate-x-1/2"
+            style={{
+              fontFamily: "var(--font-host-grotesk)",
+              fontSize: "12px",
+              letterSpacing: "0.1em",
+              color: "rgba(242,235,217,0.4)",
+            }}
+          >
+            {lightbox + 1} / {images.length}
+          </div>
+
+          {/* Prev */}
+          <button
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-4 md:left-8 flex items-center justify-center"
+            style={{
+              width: "48px",
+              height: "48px",
+              borderRadius: "50%",
+              background: "rgba(242,235,217,0.08)",
+              border: "1px solid rgba(242,235,217,0.15)",
+              color: "#F2EBD9",
+              fontSize: "20px",
+              cursor: "pointer",
+              transition: "background 0.2s ease",
+              zIndex: 10,
+            }}
+          >
+            ‹
+          </button>
+
+          {/* Image */}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "min(90vw, 680px)",
+              maxHeight: "88dvh",
+              position: "relative",
+            }}
+          >
+            <Image
+              key={lightbox}
+              src={`/work2/${images[lightbox]}`}
+              alt={`Tattoo by Jess — piece ${lightbox + 1}`}
+              width={680}
+              height={900}
+              style={{
+                width: "auto",
+                height: "auto",
+                maxWidth: "min(90vw, 680px)",
+                maxHeight: "88dvh",
+                objectFit: "contain",
+                display: "block",
+                borderRadius: "4px",
+              }}
+              quality={90}
+              priority
+            />
+          </div>
+
+          {/* Next */}
+          <button
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-4 md:right-8 flex items-center justify-center"
+            style={{
+              width: "48px",
+              height: "48px",
+              borderRadius: "50%",
+              background: "rgba(242,235,217,0.08)",
+              border: "1px solid rgba(242,235,217,0.15)",
+              color: "#F2EBD9",
+              fontSize: "20px",
+              cursor: "pointer",
+              transition: "background 0.2s ease",
+              zIndex: 10,
+            }}
+          >
+            ›
+          </button>
+        </div>
+      )}
     </>
   );
 }
