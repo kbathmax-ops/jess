@@ -74,27 +74,12 @@ export default function About() {
                   fontWeight: 500,
                 }}
               >
-                A tattoo is a declaration — of who you are, what you've been
-                through, and what you carry with you. Every piece I create is
-                rooted in that idea. Whether it&apos;s a symbol tied to your
-                culture, a reminder of someone you love, or a mark of a chapter
-                you&apos;ve closed, your ink deserves to be treated with that weight.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right" delay={0.3}>
-              <p
-                style={{
-                  fontFamily: "var(--font-host-grotesk)",
-                  fontSize: "17px",
-                  color: "rgba(26,20,16,0.72)",
-                  lineHeight: "1.75",
-                  fontWeight: 500,
-                }}
-              >
-                I work with you to translate your beliefs into fine line work
-                that feels intentional, personal, and made to last — out of a
-                private studio in North York, Toronto.
+                I&apos;m Jess, a Toronto-based tattoo artist creating custom pieces
+                that feel personal and timeless. I began tattooing in a professional
+                shop in China, where I built a strong foundation in precision and
+                technique. I work across styles including fine line, linework, and
+                illustrative designs, and I&apos;m continually growing and evolving in
+                my craft as I develop my journey as an artist.
               </p>
             </ScrollReveal>
           </div>
