@@ -8,7 +8,7 @@ const tiles = [
   { label: "Script & Lettering", sub: "Custom", bg: "#1A1410", img: "/portfolio/IMG_1290.jpg"  },
   { label: "Blackwork",          sub: "Flash",  bg: "#2C1A0E", img: "/portfolio/IMG_2238.jpg"  },
   { label: "Botanicals",         sub: "Flash",  bg: "#5C1515", img: "/portfolio/IMG_1020.jpg"  },
-  { label: "Micro Realism",      sub: "Custom", bg: "#7A1515", img: "/portfolio/B872EA30-7ECB-41C8-9536-00711CA698FF.JPG" },
+  { label: "Micro Realism",      sub: "Custom", bg: "#7A1515", img: "/portfolio/IMG_0174_new.jpg" },
 ];
 
 export default function Work() {
