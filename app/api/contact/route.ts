@@ -1,13 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import twilio from "twilio";
 
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const twilioClient = twilio(
-    process.env.TWILIO_ACCOUNT_SID,
-    process.env.TWILIO_AUTH_TOKEN
-  );
   const { name, email, subject, message } = await req.json();
 
   if (!name || !email || !message) {
@@ -32,12 +27,6 @@ export async function POST(req: NextRequest) {
           <p style="white-space:pre-wrap;line-height:1.7;margin:0">${message}</p>
         </div>
       `,
-    });
-
-    await twilioClient.messages.create({
-      from: process.env.TWILIO_PHONE_NUMBER!,
-      to: "+14389796889",
-      body: `New booking enquiry from ${name} (${email})\n\n${message.slice(0, 200)}${message.length > 200 ? "..." : ""}`,
     });
 
     return NextResponse.json({ ok: true });
