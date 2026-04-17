@@ -68,7 +68,7 @@ export default function Contact() {
               }}
             >
               DM on Instagram for the fastest response, or fill in the form below.
-              Include your design idea, size, placement, and any reference images. Must be 18+ — under 18 requires a parent or guardian waiver.
+              Include your design idea, size, placement, and any reference images.
             </p>
           </ScrollReveal>
         </div>
