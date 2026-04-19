@@ -92,7 +92,8 @@ function Calendar({ selected, onSelect }: { selected: string; onSelect: (d: stri
 }
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", contactMethod: "" });
+  const [referenceFiles, setReferenceFiles] = useState<File[]>([]);
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -105,16 +106,22 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, availability: selectedDate && selectedTime ? `${selectedDate} at ${selectedTime}` : selectedDate || selectedTime || "Not specified" }),
-      });
+      const fd = new FormData();
+      fd.append("name", form.name);
+      fd.append("email", form.email);
+      fd.append("subject", form.subject);
+      fd.append("message", form.message);
+      fd.append("contactMethod", form.contactMethod);
+      fd.append("availability", selectedDate && selectedTime ? `${selectedDate} at ${selectedTime}` : selectedDate || selectedTime || "Not specified");
+      referenceFiles.forEach(file => fd.append("references", file));
+
+      const res = await fetch("/api/contact", { method: "POST", body: fd });
       if (res.ok) {
         setStatus("sent");
-        setForm({ name: "", email: "", subject: "", message: "" });
+        setForm({ name: "", email: "", subject: "", message: "", contactMethod: "" });
         setSelectedDate("");
         setSelectedTime("");
+        setReferenceFiles([]);
       } else {
         setStatus("error");
       }
@@ -283,6 +290,118 @@ export default function Contact() {
                   className="field-input resize-none"
                   placeholder="Design idea, size (cm or inches), placement, reference images..."
                 />
+              </div>
+
+              {/* Preferred contact method */}
+              <div>
+                <label
+                  style={{
+                    display: "block",
+                    fontFamily: "var(--font-host-grotesk)",
+                    fontWeight: 600,
+                    fontSize: "12px",
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "rgba(242,235,217,0.4)",
+                    marginBottom: "10px",
+                  }}
+                >
+                  Preferred Contact Method
+                </label>
+                <input
+                  type="text"
+                  name="contactMethod"
+                  value={form.contactMethod}
+                  onChange={handleChange}
+                  className="field-input"
+                  placeholder="e.g. Instagram — @tattoosbyjesss"
+                />
+              </div>
+
+              {/* Reference images */}
+              <div>
+                <label
+                  style={{
+                    display: "block",
+                    fontFamily: "var(--font-host-grotesk)",
+                    fontWeight: 600,
+                    fontSize: "12px",
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "rgba(242,235,217,0.4)",
+                    marginBottom: "10px",
+                  }}
+                >
+                  Reference Images <span style={{ fontWeight: 400, letterSpacing: "0.05em", textTransform: "none", fontSize: "11px" }}>(optional — max 5MB each)</span>
+                </label>
+                <label
+                  htmlFor="reference-upload"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    cursor: "pointer",
+                    padding: "12px 16px",
+                    background: "rgba(242,235,217,0.04)",
+                    border: "1px solid rgba(242,235,217,0.12)",
+                    fontFamily: "var(--font-host-grotesk)",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    color: referenceFiles.length > 0 ? "#F2EBD9" : "rgba(242,235,217,0.35)",
+                    transition: "border-color 0.15s",
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = "rgba(242,235,217,0.25)")}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(242,235,217,0.12)")}
+                >
+                  <span style={{ fontSize: "18px", lineHeight: 1 }}>↑</span>
+                  {referenceFiles.length === 0
+                    ? "Upload reference photos"
+                    : `${referenceFiles.length} file${referenceFiles.length > 1 ? "s" : ""} selected`}
+                </label>
+                <input
+                  id="reference-upload"
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  style={{ display: "none" }}
+                  onChange={e => setReferenceFiles(Array.from(e.target.files || []))}
+                />
+                {referenceFiles.length > 0 && (
+                  <div style={{ marginTop: "8px", display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                    {referenceFiles.map((f, i) => (
+                      <span
+                        key={i}
+                        style={{
+                          fontFamily: "var(--font-host-grotesk)",
+                          fontSize: "12px",
+                          fontWeight: 500,
+                          color: "rgba(242,235,217,0.5)",
+                          background: "rgba(242,235,217,0.06)",
+                          padding: "3px 10px",
+                          borderRadius: "2px",
+                        }}
+                      >
+                        {f.name}
+                      </span>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={() => setReferenceFiles([])}
+                      style={{
+                        fontFamily: "var(--font-host-grotesk)",
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        color: "#A63324",
+                        background: "none",
+                        border: "none",
+                        cursor: "pointer",
+                        padding: "3px 6px",
+                      }}
+                    >
+                      Clear
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Availability */}

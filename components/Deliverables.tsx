@@ -37,6 +37,10 @@ const services = [
 
 const policies = [
   {
+    title: "Age Requirement",
+    desc: "Must be 18 or older. Clients under 18 must have a parent or guardian present and provide a signed consent form before the appointment.",
+  },
+  {
     title: "Deposit",
     desc: "A minimum $10 non-refundable deposit is required to secure your booking. Sent via e-transfer (auto-deposit enabled). Goes toward your final price.",
   },
