@@ -207,7 +207,7 @@ export default function Deliverables() {
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  $70
+                  $150
                 </p>
                 <p
                   className="mb-4"
