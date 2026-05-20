@@ -42,7 +42,7 @@ const policies = [
   },
   {
     title: "Deposit",
-    desc: "A minimum $10 non-refundable deposit is required to secure your booking. Sent via e-transfer (auto-deposit enabled). Goes toward your final price.",
+    desc: "A $20 non-refundable deposit is required to secure your booking. Paid securely online — goes toward your final price.",
   },
   {
     title: "Rescheduling",
